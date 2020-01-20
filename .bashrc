@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Do nothing on non-interactive
 case $- in
@@ -18,8 +19,10 @@ alias mycal="ncal -3Mbw"
 alias mycalv="ncal -3Mw"
 alias stop="sync && sync && sudo shutdown now"
 alias restart="sync && sync && sudo shutdown -r now"
-alias update_check="sudo aptitude update && sudo aptitude --simulate upgrade -y"
-alias update_exec="sudo apt-fast upgrade -y"
+if [[ "$(uname -a)" =~ Ubuntu|Debian ]]; then
+	alias update_check="sudo aptitude update && sudo aptitude --simulate upgrade -y"
+	alias update_exec="sudo apt-fast upgrade -y"
+fi
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 export VISUAL=/usr/bin/vim
