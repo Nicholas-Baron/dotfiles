@@ -15,9 +15,9 @@ import Graphics.X11.ExtraTypes.XF86
 
 myModMask = mod4Mask
 
-myWorkspaces = named ++ [ show s | s <- [1..9] , s > length named ]
-  where named = map (\ (index, name) -> show index ++ (':' : ' ' : name)) 
-              $ zip [1..] [ "main", "internet", "local", "extra" ]
+myWorkspaces = zipWith number (named ++ repeat "") [1..9]
+  where named = ["main", "internet", "local", "extra"]
+        number str = if null str then show else \ num -> show num ++ (':' : ' ' : str)
 
 myKeys conf = M.fromList
     -- using i3-like shortcuts
