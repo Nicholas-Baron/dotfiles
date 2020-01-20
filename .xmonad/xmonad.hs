@@ -7,6 +7,9 @@ import XMonad.Hooks.ManageDocks
 
 import XMonad.Layout.NoBorders (smartBorders)
 
+import qualified XMonad.StackSet as W
+
+import XMonad.Util.EZConfig
 import XMonad.Util.Run
 
 import Data.Char (isNumber)
@@ -35,6 +38,11 @@ myKeys conf = M.fromList
       withSign val = (if val > 0 then '+' else '-') : filter isNumber (show val)
       entry mods key action = (( foldl (.|.) 0 mods, key), spawn action)
 
+myWorkspaceKeys = [ ((m .|. myModMask, k), windows $ f i)
+                  | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
+                  , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
+                  ]
+
 main = do
   bar <- spawnPipe "$HOME/.config/polybar/launch.sh"
   xmonad $ desktopConfig
@@ -47,4 +55,4 @@ main = do
     , logHook = ewmhDesktopsLogHook
     , layoutHook = desktopLayoutModifiers $ smartBorders $ layoutHook desktopConfig
     , manageHook = manageDocks <+> manageHook desktopConfig
-    }
+    } `additionalKeys` myWorkspaceKeys
