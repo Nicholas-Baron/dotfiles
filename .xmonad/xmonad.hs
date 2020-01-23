@@ -27,7 +27,7 @@ myKeys conf = M.fromList
     [ entry [myModMask] xK_Return (XMonad.terminal conf)
     , entry [myModMask] xK_d "exe=$(dmenu_path | dmenu) && eval \" exec $exe \""
     -- print screen = screenshot
-    , entry [] xK_Print "scrot"
+    , entry [] xK_Print "scrot -e 'mkdir -p ~/pics && mv $f ~/pics/'"
     -- audio controls
     , entry [] xF86XK_AudioLowerVolume (volumeDelta $ negate 5)
     , entry [] xF86XK_AudioRaiseVolume (volumeDelta 5)
