@@ -53,6 +53,7 @@ main = do
     , keys = \ c -> M.union (myKeys c) $ keys XMonad.def c
     , workspaces = myWorkspaces
     , logHook = ewmhDesktopsLogHook
+    , handleEventHook = fullscreenEventHook <+> handleEventHook desktopConfig
     , layoutHook = desktopLayoutModifiers $ smartBorders $ layoutHook desktopConfig
     , manageHook = manageDocks <+> manageHook desktopConfig
     } `additionalKeys` myWorkspaceKeys
