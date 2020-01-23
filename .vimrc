@@ -33,7 +33,7 @@ set softtabstop=4
 " Indent 'helpers'
 set ai si
 
-set cursorline 
+" set cursorline
 " set foldmethod=indent
 
 " Searching details
