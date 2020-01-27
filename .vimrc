@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Add vundle plugins here
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'dag/vim-fish'
 
 call vundle#end()
 
