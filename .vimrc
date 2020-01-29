@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Add vundle plugins here
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'dag/vim-fish'
+Plugin 'DougBeney/vim-reddit'
 
 call vundle#end()
 
