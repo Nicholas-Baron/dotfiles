@@ -12,6 +12,7 @@ export PS1=" \u@\H \A \w \$> "
 
 alias ll="ls --color=auto -l"
 alias ls="ls --color=auto"
+alias la="ls --color=auto -A"
 alias lshere="ls --color=auto -gAFh --group-directories-first"
 alias grep="grep --color=auto"
 alias dir="dir --color=auto"
