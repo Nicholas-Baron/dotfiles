@@ -2,6 +2,7 @@
 fish_vi_key_bindings
 
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias mycal='cal -3mw'
 abbr run 'bash -ci'
 abbr bash 'bash -i'
 
