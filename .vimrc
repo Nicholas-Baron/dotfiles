@@ -42,3 +42,5 @@ set ai si
 " Searching details
 set showmatch incsearch hlsearch ignorecase smartcase
 
+" Spelling in LaTeX
+autocmd FileType tex setlocal spell spelllang=en_us
