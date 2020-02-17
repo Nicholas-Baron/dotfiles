@@ -26,6 +26,8 @@ myKeys conf = M.fromList
     -- using i3-like shortcuts
     [ entry [myModMask] xK_Return (XMonad.terminal conf)
     , entry [myModMask] xK_d "exe=$(dmenu_path | dmenu) && eval \" exec $exe \""
+    -- remap normal mod-return to mod-shift-return
+    , ((myModMask .|. shiftMask, xK_Return), windows W.swapMaster)
     -- print screen = screenshot
     , entry [] xK_Print "scrot -e 'mkdir -p ~/pics && mv $f ~/pics/'"
     -- audio controls
