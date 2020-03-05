@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'dag/vim-fish'
 Plugin 'DougBeney/vim-reddit'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
