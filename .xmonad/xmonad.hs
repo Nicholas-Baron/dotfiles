@@ -18,7 +18,7 @@ import Graphics.X11.ExtraTypes.XF86
 
 myModMask = mod4Mask
 
-myWorkspaces = zipWith number (named ++ repeat "") [1..9]
+myWorkspaces = zipWith number (named ++ repeat "") [1..5]
   where named = ["main", "internet", "local", "extra"]
         number str = if null str then show else \ num -> show num ++ (':' : ' ' : str)
 
@@ -41,7 +41,7 @@ myKeys conf = M.fromList
       entry mods key action = (( foldl (.|.) 0 mods, key), spawn action)
 
 myWorkspaceKeys = [ ((m .|. myModMask, k), windows $ f i)
-                  | (i, k) <- zip myWorkspaces [xK_1 .. xK_9]
+                  | (i, k) <- zip myWorkspaces [xK_1 .. xK_5]
                   , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
                   ]
 
