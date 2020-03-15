@@ -1,3 +1,5 @@
+{-# OPTIONS -O2 #-}
+
 import XMonad
 
 import XMonad.Config.Desktop
