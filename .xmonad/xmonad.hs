@@ -7,7 +7,7 @@ import XMonad.Config.Desktop
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 
-import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Layout.NoBorders (noBorders, smartBorders)
 
 import qualified XMonad.StackSet as W
 
@@ -58,6 +58,6 @@ main = do
     , workspaces = myWorkspaces
     , logHook = ewmhDesktopsLogHook
     , handleEventHook = fullscreenEventHook <+> handleEventHook desktopConfig
-    , layoutHook = desktopLayoutModifiers $ smartBorders $ layoutHook desktopConfig
+    , layoutHook = desktopLayoutModifiers $ noBorders $ layoutHook desktopConfig
     , manageHook = manageDocks <+> manageHook desktopConfig
     } `additionalKeys` myWorkspaceKeys
