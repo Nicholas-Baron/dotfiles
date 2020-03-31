@@ -1,4 +1,4 @@
-{-# OPTIONS -O2 #-}
+{-# OPTIONS -O2 -W -Wno-type-defaults -Wno-missing-signatures #-}
 
 import XMonad
 
@@ -7,21 +7,25 @@ import XMonad.Config.Desktop
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 
-import XMonad.Layout.NoBorders (noBorders, smartBorders)
+import XMonad.Layout.NoBorders (noBorders)
 
 import qualified XMonad.StackSet as W
 
-import XMonad.Util.EZConfig
-import XMonad.Util.Run
+import XMonad.Util.EZConfig ()
+import XMonad.Util.Run ()
+import XMonad.Util.SpawnOnce
 
 import Data.Char (isNumber)
 import qualified Data.Map as M
 import Graphics.X11.ExtraTypes.XF86
 
+myModMask :: KeyMask
 myModMask = mod4Mask
 
+myWorkspaces :: [String]
 myWorkspaces = zipWith number (named ++ repeat "") [1..5]
   where named = ["main", "internet", "local", "extra"]
+        number :: (Show a, Num a, Enum a) => String -> a -> String
         number str = if null str then show else \ num -> show num ++ (':' : ' ' : str)
 
 myKeys conf = M.fromList
@@ -42,13 +46,9 @@ myKeys conf = M.fromList
       withSign val = (if val > 0 then '+' else '-') : filter isNumber (show val)
       entry mods key action = (( foldl (.|.) 0 mods, key), spawn action)
 
-myWorkspaceKeys = [ ((m .|. myModMask, k), windows $ f i)
-                  | (i, k) <- zip myWorkspaces [xK_1 .. xK_5]
-                  , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
-                  ]
+myStartupHook = spawnOnce "$HOME/.config/polybar/launch.sh"
 
 main = do
-  bar <- spawnPipe "$HOME/.config/polybar/launch.sh"
   xmonad $ desktopConfig
     { borderWidth = 1
     , terminal = "alacritty"
@@ -60,4 +60,5 @@ main = do
     , handleEventHook = fullscreenEventHook <+> handleEventHook desktopConfig
     , layoutHook = desktopLayoutModifiers $ noBorders $ layoutHook desktopConfig
     , manageHook = manageDocks <+> manageHook desktopConfig
-    } `additionalKeys` myWorkspaceKeys
+    , startupHook = myStartupHook <+> startupHook desktopConfig
+    }
