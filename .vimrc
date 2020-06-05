@@ -19,7 +19,7 @@ filetype plugin indent on
 
 set autoread laststatus=1
 
-set ruler number
+set ruler number relativenumber
 
 " Color stuff
 set t_Co=256
