@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'dag/vim-fish'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'harenome/vim-mipssyntax'
 
 call vundle#end()
 
@@ -20,6 +21,7 @@ filetype plugin indent on
 set autoread laststatus=1
 
 set ruler number relativenumber
+set timeoutlen=300
 
 " Color stuff
 set t_Co=256
@@ -44,3 +46,14 @@ set showmatch incsearch hlsearch ignorecase smartcase
 
 " Spelling in LaTeX
 autocmd FileType tex setlocal spell spelllang=en_us
+
+" Quick-save
+nmap <leader>w :w<CR>
+nmap <leader>; :buffers<CR>
+
+" Sane splits
+set splitright splitbelow
+
+" Decent Wildmenu
+set wildmenu wildmode=list:longest
+set wildignore=.hg,.svm,*~,*.png,*.jpg,*.gif,*.swp,*.hi,*.o
