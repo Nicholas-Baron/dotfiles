@@ -31,7 +31,7 @@ myWorkspaces = zipWith number (named ++ repeat "") [1..5]
 myKeys conf = M.fromList
     -- using i3-like shortcuts
     [ entry [myModMask] xK_Return (XMonad.terminal conf)
-    , entry [myModMask] xK_d "exe=$(dmenu_path | dmenu) && eval \" exec $exe \""
+    , entry [myModMask] xK_d "dmenu_run"
     -- remap normal mod-return to mod-shift-return
     , ((myModMask .|. shiftMask, xK_Return), windows W.swapMaster)
     -- print screen = screenshot
