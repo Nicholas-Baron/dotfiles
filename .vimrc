@@ -22,6 +22,7 @@ set autoread laststatus=1
 
 set ruler number relativenumber
 set timeoutlen=300
+set encoding=utf-8
 
 " Color stuff
 set t_Co=256
