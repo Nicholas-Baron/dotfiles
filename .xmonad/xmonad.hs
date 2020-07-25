@@ -35,7 +35,7 @@ myKeys conf = M.fromList
     -- remap normal mod-return to mod-shift-return
     , ((myModMask .|. shiftMask, xK_Return), windows W.swapMaster)
     -- print screen = screenshot
-    , entry [] xK_Print "scrot -e 'mkdir -p ~/pics && mv $f ~/pics/'"
+    , entry [] xK_Print screenshotCmd
     -- audio controls
     , entry [] xF86XK_AudioLowerVolume (volumeDelta $ negate 5)
     , entry [] xF86XK_AudioRaiseVolume (volumeDelta 5)
@@ -45,6 +45,8 @@ myKeys conf = M.fromList
       volumeDelta num = "pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ " ++ withSign num ++ "% & "
       withSign val = (if val > 0 then '+' else '-') : filter isNumber (show val)
       entry mods key action = (( foldl (.|.) 0 mods, key), spawn action)
+      screenshotCmd = "scrot -e 'mkdir -p " ++ screenshotDir ++ " && mv $f " ++ screenshotDir ++ "/'"
+      screenshotDir = "~/pics/scrot"
 
 myStartupHook = spawnOnce "$HOME/.config/polybar/launch.sh"
 
