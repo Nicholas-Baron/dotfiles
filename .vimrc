@@ -8,10 +8,16 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Add vundle plugins here
+" Tells vim to respect .editorconfig files
 Plugin 'editorconfig/editorconfig-vim'
+
+" Vim understands fish script
 Plugin 'dag/vim-fish'
+
+" Vim understands Typescript
 Plugin 'leafgarland/typescript-vim'
+
+" Vim understands MIPS
 Plugin 'harenome/vim-mipssyntax'
 
 call vundle#end()
