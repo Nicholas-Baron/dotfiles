@@ -20,6 +20,12 @@ Plugin 'leafgarland/typescript-vim'
 " Vim understands MIPS
 Plugin 'harenome/vim-mipssyntax'
 
+" Vim can format C and C++
+Plugin 'rhysd/vim-clang-format'
+
+" Useful tools for Rust
+Plugin 'rust-lang/rust.vim'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -53,6 +59,12 @@ set showmatch incsearch hlsearch ignorecase smartcase
 
 " Spelling in LaTeX
 autocmd FileType tex setlocal spell spelllang=en_us
+
+" Leader is '\'
+
+" Formatting in C++
+autocmd FileType c,cpp nnoremap <buffer><leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<CR>
 
 " Quick-save
 nmap <leader>w :w<CR>
