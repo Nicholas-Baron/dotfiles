@@ -2,10 +2,12 @@
 fish_vi_key_bindings
 
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias mycal='cal -3mw'
 alias ls='exa'
-abbr run 'bash -ci'
+alias mon2cam="deno run --unstable --allow-run --allow-read --allow-env -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/deno-rewrite/src/mod.ts"
+alias mycal='cal -3mw'
+
 abbr bash 'bash -i'
+abbr run 'bash -ci'
 
 function fish_prompt --description 'Write out the prompt'
 	set -l color_cwd
