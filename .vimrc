@@ -68,7 +68,10 @@ autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<CR>
 
 " Quick-save
 nmap <leader>w :w<CR>
+" Show loaded buffers
 nmap <leader>; :buffers<CR>
+" File explorer
+nmap <leader>l :Explore<CR>
 
 " Sane splits
 set splitright splitbelow
@@ -76,3 +79,6 @@ set splitright splitbelow
 " Decent Wildmenu
 set wildmenu wildmode=list:longest
 set wildignore=.hg,.svm,*~,*.png,*.jpg,*.gif,*.swp,*.hi,*.o
+
+" Manpages
+runtime ftplugin/man.vim
