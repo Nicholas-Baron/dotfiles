@@ -5,6 +5,7 @@ alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias ls='exa'
 alias mon2cam="deno run --unstable --allow-run --allow-read --allow-env -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
 alias mycal='cal -3mw'
+alias mycalv='cal -3mwv'
 
 abbr bash 'bash -i'
 abbr run 'bash -ci'
@@ -32,3 +33,8 @@ end
 function fish_right_prompt
     # Intentionally blank
 end
+
+# Startup code
+printf "Now is %s\n\n" (date)
+mycalv
+echo
