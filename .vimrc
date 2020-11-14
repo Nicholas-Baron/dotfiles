@@ -65,6 +65,9 @@ autocmd FileType tex setlocal spell spelllang=en_us
 " Formatting in C++
 autocmd FileType c,cpp nnoremap <buffer><leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><leader>cf :ClangFormat<CR>
+" Formatting in Rust
+autocmd FileType rs nnoremap <buffer><leader>rf :<C-u>RustFmt<CR>
+autocmd FileType rs vnoremap <buffer><leader>rf :RustFmt<CR>
 
 " Quick-save
 nmap <leader>w :w<CR>
