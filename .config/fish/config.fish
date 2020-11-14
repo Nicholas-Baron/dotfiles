@@ -6,6 +6,7 @@ alias ls='exa'
 alias mon2cam="deno run --unstable --allow-run --allow-read --allow-env -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
 alias mycal='cal -3mw'
 alias mycalv='cal -3mwv'
+alias cls='clear ; ls'
 
 abbr bash 'bash -i'
 abbr run 'bash -ci'
