@@ -76,9 +76,9 @@ nmap <leader>; :buffers<CR>
 " File explorer
 nmap <leader>l :Explore<CR>
 " Vsplit to other file fast
-nmap <leader>v :vsplit<CR>:Explore<CR>
+nmap <leader>v :vnew<CR>:Explore<CR>
 " Split to other file fast
-nmap <leader>s :split<CR>:Explore<CR>
+nmap <leader>s :new<CR>:Explore<CR>
 
 " Sane splits
 set splitright splitbelow
