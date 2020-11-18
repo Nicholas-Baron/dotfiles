@@ -81,6 +81,8 @@ nmap <leader>l :Explore<CR>
 nmap <leader>v :vnew<CR>:Explore<CR>
 " Split to other file fast
 nmap <leader>s :new<CR>:Explore<CR>
+" Open a bottom terminal
+nmap <leader>t :terminal<CR>
 
 " Sane splits
 set splitright splitbelow
