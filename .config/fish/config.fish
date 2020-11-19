@@ -36,6 +36,8 @@ function fish_right_prompt
 end
 
 # Startup code
-printf "Now is %s\n\n" (date)
-mycalv
-echo
+if status --is-interactive
+    printf "Now is %s\n\n" (date)
+    mycalv
+    echo
+end
