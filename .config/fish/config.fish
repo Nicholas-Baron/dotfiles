@@ -11,6 +11,11 @@ alias cls='clear ; ls'
 abbr bash 'bash -i'
 abbr run 'bash -ci'
 
+function mkcd --description 'make a directory and change into it'
+    mkdir "$argv"
+    cd "$argv"
+end
+
 function fish_prompt --description 'Write out the prompt'
 	set -l color_cwd
     set -l suffix
