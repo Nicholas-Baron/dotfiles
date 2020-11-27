@@ -42,6 +42,7 @@ end
 
 # Startup code
 if status --is-interactive
+    and [ $TERM = "alacritty" ]
     printf "Now is %s\n\n" (date)
     mycalv
     echo
