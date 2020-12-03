@@ -64,6 +64,11 @@ noremap <F5> :setlocal spell! spelllang=en_us<CR>
 
 " Leader is '\'
 
+" Show registers
+nmap <leader>r :registers<CR>
+" Show marks
+nmap <leader>m :marks<CR>
+
 " Formatting in C++
 autocmd FileType c,cpp nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><leader>f :ClangFormat<CR>
