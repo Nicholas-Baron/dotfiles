@@ -7,6 +7,7 @@ alias mon2cam="deno run --unstable --allow-run --allow-read --allow-env -r -q ht
 alias mycal='cal -3mw'
 alias mycalv='cal -3mwv'
 alias cls='clear ; ls'
+alias :q='exit'
 
 abbr bash 'bash -i'
 abbr run 'bash -ci'
