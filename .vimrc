@@ -96,5 +96,13 @@ set splitright splitbelow
 set wildmenu wildmode=list:longest
 set wildignore=.hg,.svm,*~,*.png,*.jpg,*.gif,*.swp,*.hi,*.o
 
+" Center search results after jumping to them
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+
 " Manpages
 runtime ftplugin/man.vim
