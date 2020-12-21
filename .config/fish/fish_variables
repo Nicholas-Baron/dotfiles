@@ -8,6 +8,8 @@ SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_bash:bash\x20\x2di
 SETUVAR _fish_abbr_run:bash\x20\x2dci
+SETUVAR _fish_abbr_set__volume:pactl\x20set\x2dsink\x2dvolume\x20\x40DEFAULT_SINK\x40
+SETUVAR _fish_abbr_toggle__mute:pactl\x20set\x2dsink\x2dmute\x20\x40DEFAULT_SINK\x40\x20toggle
 SETUVAR editor:vim
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr

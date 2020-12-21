@@ -11,6 +11,8 @@ alias :q='exit'
 
 abbr bash 'bash -i'
 abbr run 'bash -ci'
+abbr set_volume 'pactl set-sink-volume @DEFAULT_SINK@'
+abbr toggle_mute 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 function mkcd --description 'make a directory and change into it'
     mkdir "$argv"
