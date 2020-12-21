@@ -78,6 +78,8 @@ autocmd FileType rust vnoremap <buffer><leader>f :RustFmt<CR>
 
 " Quick-save
 nmap <leader>w :w<CR>
+" Remove highlighting from searches fast
+nmap <leader>h :noh<CR>
 " Show loaded buffers
 nmap <leader>; :buffers<CR>
 " File explorer
@@ -102,7 +104,6 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
-
 
 " Manpages
 runtime ftplugin/man.vim
