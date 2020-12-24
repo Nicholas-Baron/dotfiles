@@ -65,9 +65,9 @@ noremap <F5> :setlocal spell! spelllang=en_us<CR>
 " Leader is '\'
 
 " Show registers
-nmap <leader>r :registers<CR>
+nnoremap <leader>r :registers<CR>
 " Show marks
-nmap <leader>m :marks<CR>
+nnoremap <leader>m :marks<CR>
 
 " Formatting in C++
 autocmd FileType c,cpp nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
@@ -77,19 +77,19 @@ autocmd FileType rust nnoremap <buffer><leader>f :<C-u>RustFmt<CR>
 autocmd FileType rust vnoremap <buffer><leader>f :RustFmt<CR>
 
 " Quick-save
-nmap <leader>w :w<CR>
+nnoremap <leader>w :w<CR>
 " Remove highlighting from searches fast
-nmap <leader>h :noh<CR>
+nnoremap <leader>h :noh<CR>
 " Show loaded buffers
-nmap <leader>; :buffers<CR>
+nnoremap <leader>; :buffers<CR>
 " File explorer
-nmap <leader>l :Explore<CR>
+nnoremap <leader>l :Explore<CR>
 " Vsplit to other file fast
-nmap <leader>v :vnew<CR>:Explore<CR>
+nnoremap <leader>v :vnew<CR>:Explore<CR>
 " Split to other file fast
-nmap <leader>s :new<CR>:Explore<CR>
+nnoremap <leader>s :new<CR>:Explore<CR>
 " Open a bottom terminal
-nmap <leader>t :terminal<CR>
+nnoremap <leader>t :terminal<CR>
 
 " Sane splits
 set splitright splitbelow
