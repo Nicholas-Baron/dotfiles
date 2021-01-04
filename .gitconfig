@@ -9,3 +9,5 @@
 	helper = store
 [commit]
 	verbose = true
+[init]
+	defaultBranch = main
