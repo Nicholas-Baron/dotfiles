@@ -77,7 +77,7 @@ autocmd FileType rust nnoremap <buffer><leader>f :<C-u>RustFmt<CR>
 autocmd FileType rust vnoremap <buffer><leader>f :RustFmt<CR>
 
 " Quick-save
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :wa<CR>
 " Remove highlighting from searches fast
 nnoremap <leader>h :noh<CR>
 " Show loaded buffers
