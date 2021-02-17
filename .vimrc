@@ -85,9 +85,9 @@ nnoremap <leader>; :buffers<CR>
 " File explorer
 nnoremap <leader>l :Explore<CR>
 " Vsplit to other file fast
-nnoremap <leader>v :vnew<CR>:Explore<CR>
+nnoremap <leader>v :Vex<CR>
 " Split to other file fast
-nnoremap <leader>s :new<CR>:Explore<CR>
+nnoremap <leader>s :Sex<CR>
 " Open a bottom terminal
 nnoremap <leader>t :terminal<CR>
 
