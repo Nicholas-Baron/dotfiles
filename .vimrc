@@ -63,6 +63,7 @@ autocmd FileType tex setlocal spell spelllang=en_us
 noremap <F5> :setlocal spell! spelllang=en_us<CR>
 
 " Leader is '\'
+set notimeout " bindings should wait until a match
 
 " Show registers
 nnoremap <leader>r :registers<CR>
