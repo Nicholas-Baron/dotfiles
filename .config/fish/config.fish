@@ -9,6 +9,11 @@ alias mycalv='cal -3mwv'
 alias cls='clear ; ls'
 alias :q='exit'
 
+# git shortcuts
+alias gs='git status'
+alias gap='git add -p'
+alias gcm='git commit -m'
+
 abbr bash 'bash -i'
 abbr run 'bash -ci'
 abbr set_volume 'pactl set-sink-volume @DEFAULT_SINK@'
