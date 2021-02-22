@@ -69,6 +69,8 @@ set notimeout " bindings should wait until a match
 nnoremap <leader>r :registers<CR>
 " Show marks
 nnoremap <leader>m :marks<CR>
+" Return to normal mode without Esc
+inoremap <leader>e <Esc>
 
 " Formatting in C++
 autocmd FileType c,cpp nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
