@@ -69,6 +69,8 @@ set notimeout " bindings should wait until a match
 nnoremap <leader>r :registers<CR>
 " Show marks
 nnoremap <leader>m :marks<CR>
+" Leader leader is how to type leader
+inoremap <leader><leader> <leader>
 " Return to normal mode without Esc
 inoremap <leader>e <Esc>
 
