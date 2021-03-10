@@ -13,6 +13,8 @@ alias :q='exit'
 alias gs='git status'
 alias gap='git add -p'
 alias gcm='git commit -m'
+alias gd='git diff'
+alias gds='git diff --staged'
 
 abbr bash 'bash -i'
 abbr run 'bash -ci'
