@@ -63,16 +63,11 @@ autocmd FileType tex setlocal spell spelllang=en_us
 noremap <F5> :setlocal spell! spelllang=en_us<CR>
 
 " Leader is '\'
-set timeoutlen=2000 " double the usual timeout delay
 
 " Show registers
 nnoremap <leader>r :registers<CR>
 " Show marks
 nnoremap <leader>m :marks<CR>
-" Leader leader is how to type leader
-inoremap <leader><leader> <leader>
-" Return to normal mode without Esc
-inoremap <leader>e <Esc>
 
 " Formatting in C++
 autocmd FileType c,cpp nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
