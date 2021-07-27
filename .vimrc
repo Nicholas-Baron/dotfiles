@@ -71,8 +71,8 @@ nnoremap <leader>r :registers<CR>
 nnoremap <leader>m :marks<CR>
 
 " Formatting in C++
-autocmd FileType c,cpp nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp vnoremap <buffer><leader>f :ClangFormat<CR>
+autocmd FileType c,cpp,cuda nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,cuda vnoremap <buffer><leader>f :ClangFormat<CR>
 " Formatting in Rust
 autocmd FileType rust nnoremap <buffer><leader>f :<C-u>RustFmt<CR>
 autocmd FileType rust vnoremap <buffer><leader>f :RustFmt<CR>
