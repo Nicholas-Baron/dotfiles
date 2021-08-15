@@ -27,6 +27,10 @@ function mkcd --description 'make a directory and change into it'
     cd "$argv"
 end
 
+function open --description 'always use xdg-open'
+    xdg-open "$argv"
+end
+
 function fish_prompt --description 'Write out the prompt'
 	set -l color_cwd
     set -l suffix
