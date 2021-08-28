@@ -98,6 +98,10 @@ nnoremap <leader>s :Sex<CR>
 " Open a bottom terminal
 nnoremap <leader>t :terminal<CR>
 
+" Custom commands
+" Load buffer to side
+command -nargs=1 Vbuf vnew | buf <args>
+
 " Sane splits
 set splitright splitbelow
 
