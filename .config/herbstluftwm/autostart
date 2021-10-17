@@ -154,6 +154,8 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule title~'CS4450.*' floating=on
+hc rule title='zoom' floating=on
+hc rule title='Stellaris' floating=on floatplacement=center
 
 hc set tree_style '╾│ ├└╼─┐'
 
