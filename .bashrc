@@ -26,8 +26,8 @@ if [[ "$(uname -a)" =~ Ubuntu|Debian ]]; then
 fi
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
-export VISUAL=/usr/bin/vim
-export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/nvim
 
 # append to history
 shopt -s histappend
