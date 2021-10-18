@@ -3,11 +3,11 @@ fish_vi_key_bindings
 
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias ls='exa'
-alias mon2cam="deno run --unstable --allow-run --allow-read --allow-env -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
 alias mycal='cal -3mw'
 alias mycalv='cal -3mwv'
 alias cls='clear ; exa'
 alias :q='exit'
+alias vim='nvim'
 
 # git shortcuts
 alias gs='git status'
@@ -21,6 +21,8 @@ abbr run 'bash -ci'
 abbr set_volume 'pactl set-sink-volume @DEFAULT_SINK@'
 abbr toggle_mute 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 abbr cmake 'cmake -GNinja'
+abbr stop "sync ;and sync ;and sudo shutdown now"
+abbr restart "sync ;and sync ;and sudo shutdown -r now"
 
 function mkcd --description 'make a directory and change into it'
     mkdir "$argv"
