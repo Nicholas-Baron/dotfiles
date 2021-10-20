@@ -36,7 +36,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
-local servers = {'clangd', 'cmake', 'rls', 'texlab'}
+local servers = {'clangd', 'cmake', 'rls', 'texlab', 'pylsp'}
 for _, server in ipairs(servers) do
     lsp[server].setup(
         coq.lsp_ensure_capabilities{
