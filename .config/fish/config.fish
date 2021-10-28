@@ -7,7 +7,11 @@ alias mycal='cal -3mw'
 alias mycalv='cal -3mwv'
 alias cls='clear ; exa'
 alias :q='exit'
+
+# vim shortcuts
 alias vim='nvim'
+alias vimconf='nvim ~/.vimrc'
+alias nvimconf='nvim ~/.config/nvim/init.vim'
 
 # git shortcuts
 alias gs='git status'
