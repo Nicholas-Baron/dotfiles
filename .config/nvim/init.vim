@@ -6,6 +6,8 @@ source ~/.vimrc
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
+let g:coq_settings = { 'display.pum.fast_close': v:false, 'auto_start': v:true, 'display.icons.mode' : 'none' }
+
 lua << EOF
 local lsp = require('lspconfig')
 local coq = require('coq')
@@ -46,5 +48,4 @@ for _, server in ipairs(servers) do
 end
 EOF
 
-set completeopt="menuone,noselect,preview,noinsert"
-COQnow
+set completeopt="menuone,noselect,noinsert"
