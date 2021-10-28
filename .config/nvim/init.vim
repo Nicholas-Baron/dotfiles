@@ -6,7 +6,11 @@ source ~/.vimrc
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
-let g:coq_settings = { 'display.pum.fast_close': v:false, 'auto_start': v:true, 'display.icons.mode' : 'none' }
+let g:coq_settings = {
+            \ 'display.pum.fast_close': v:false,
+            \ 'auto_start': v:true,
+            \ 'display.icons.mode' : 'none'
+            \ }
 
 lua << EOF
 local lsp = require('lspconfig')
