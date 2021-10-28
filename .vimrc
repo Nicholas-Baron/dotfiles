@@ -30,8 +30,8 @@ call vundle#end()
 
 filetype plugin indent on
 
-set autoread laststatus=1
-
+set autoread autowrite laststatus=1
+set nojoinspaces
 set ruler number relativenumber
 set timeoutlen=300
 set encoding=utf-8
@@ -39,8 +39,11 @@ set encoding=utf-8
 " Color stuff
 set t_Co=256
 syntax on
+set synmaxcol=500
 set background=dark
 set colorcolumn=100
+
+set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 " The correct tab size
 set shiftwidth=4
@@ -83,6 +86,8 @@ if executable('black')
     autocmd FileType python vnoremap <buffer><leader>f :w<CR>:!black %<CR>
 end
 
+" ; = : in normal mode
+nnoremap ; :
 " Quick-save
 nnoremap <leader>w :wa<CR>
 " Remove highlighting from searches fast
@@ -97,10 +102,13 @@ nnoremap <leader>v :Vex<CR>
 nnoremap <leader>s :Sex<CR>
 " Open a bottom terminal
 nnoremap <leader>t :terminal<CR>
+" Show or hide invisible characters
+nnoremap <leader>, :set invlist<CR>
 
 " Custom commands
 " Load buffer to side
 command -nargs=1 Vbuf vnew | buf <args>
+command -nargs=1 Nbuf new | buf <args>
 
 " Sane splits
 set splitright splitbelow
