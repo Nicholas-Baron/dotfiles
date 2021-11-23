@@ -12,7 +12,7 @@ alias :q='exit'
 alias vim='nvim'
 alias vimconf='nvim ~/.vimrc'
 alias nvimconf='nvim ~/.config/nvim/init.vim'
-alias fishconf ='nvim ~/.config/fish/config.fish'
+alias fishconf='nvim ~/.config/fish/config.fish'
 
 # git shortcuts
 alias gs='git status'
@@ -29,6 +29,7 @@ abbr cmake 'cmake -GNinja'
 abbr update 'sudo aura -Syu ;and sudo aura -Au'
 abbr stop "sync ;and sync ;and sudo shutdown now"
 abbr restart "sync ;and sync ;and sudo shutdown -r now"
+abbr goto 'cd (dirname (fzf))'
 
 function mkcd --description 'make a directory and change into it'
     mkdir "$argv"

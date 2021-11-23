@@ -8,11 +8,13 @@ SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_bash:bash\x20\x2di
 SETUVAR _fish_abbr_cmake:cmake\x20\x2dGNinja
+SETUVAR _fish_abbr_goto:cd\x20\x28dirname\x20\x28fzf\x29\x29
 SETUVAR _fish_abbr_restart:sync\x20\x3band\x20sync\x20\x3band\x20sudo\x20shutdown\x20\x2dr\x20now
 SETUVAR _fish_abbr_run:bash\x20\x2dci
 SETUVAR _fish_abbr_set__volume:pactl\x20set\x2dsink\x2dvolume\x20\x40DEFAULT_SINK\x40
 SETUVAR _fish_abbr_stop:sync\x20\x3band\x20sync\x20\x3band\x20sudo\x20shutdown\x20now
 SETUVAR _fish_abbr_toggle__mute:pactl\x20set\x2dsink\x2dmute\x20\x40DEFAULT_SINK\x40\x20toggle
+SETUVAR _fish_abbr_update:sudo\x20aura\x20\x2dSyu\x20\x3band\x20sudo\x20aura\x20\x2dAu
 SETUVAR editor:vim
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
