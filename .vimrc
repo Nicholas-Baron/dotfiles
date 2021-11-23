@@ -111,6 +111,10 @@ nnoremap <leader>, :set invlist<CR>
 command -nargs=1 Vbuf vnew | buf <args>
 command -nargs=1 Nbuf new | buf <args>
 
+" Cool netrw setup
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
 " Sane splits
 set splitright splitbelow
 
