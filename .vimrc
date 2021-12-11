@@ -26,6 +26,9 @@ Plugin 'rhysd/vim-clang-format'
 " Useful tools for Rust
 Plugin 'rust-lang/rust.vim'
 
+" Use ripgrep in vim
+Plugin 'jremmen/vim-ripgrep'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -73,19 +76,21 @@ nnoremap <leader>r :registers<CR>
 " Show marks
 nnoremap <leader>m :marks<CR>
 
-" Formatting in C++
-autocmd FileType c,cpp,cuda nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,cuda vnoremap <buffer><leader>f :ClangFormat<CR>
-" Formatting in Rust
-autocmd FileType rust nnoremap <buffer><leader>f :<C-u>RustFmt<CR>
-autocmd FileType rust vnoremap <buffer><leader>f :RustFmt<CR>
+if !has('nvim')
+    " Formatting in C++
+    autocmd FileType c,cpp,cuda nnoremap <buffer><leader>f :<C-u>ClangFormat<CR>
+    autocmd FileType c,cpp,cuda vnoremap <buffer><leader>f :ClangFormat<CR>
+    " Formatting in Rust
+    autocmd FileType rust nnoremap <buffer><leader>f :<C-u>RustFmt<CR>
+    autocmd FileType rust vnoremap <buffer><leader>f :RustFmt<CR>
+end
+
 " Formatting in Python
 " Use system-installed python black
 if executable('black')
     autocmd FileType python nnoremap <buffer><leader>f :<C-u>w<CR>:!black %<CR>:e<CR>
     autocmd FileType python vnoremap <buffer><leader>f :w<CR>:!black %<CR>:e<CR>
 end
-
 
 " ; = : in normal mode
 nnoremap ; :
