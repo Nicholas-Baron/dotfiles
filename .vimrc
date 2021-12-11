@@ -57,7 +57,15 @@ set colorcolumn=100
 
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
+" Cool netrw setup
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
 let NERDTreeMinimalUI=1
+let g:NERDTreeHighlightCursorline = 0
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTreeVCS | endif
 
 " The correct tab size
 set shiftwidth=4
@@ -127,10 +135,6 @@ nnoremap <leader>, :set invlist<CR>
 command -nargs=1 Vbuf vnew | buf <args>
 command -nargs=1 Nbuf new | buf <args>
 
-" Cool netrw setup
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-
 " Sane splits
 set splitright splitbelow
 
@@ -144,6 +148,11 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
+
+" Use ninja if a ninja.build file exists
+if !empty(globpath('.', 'build.ninja'))
+    set makeprg=ninja
+endif
 
 " Manpages
 runtime ftplugin/man.vim
