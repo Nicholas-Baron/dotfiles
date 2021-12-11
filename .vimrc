@@ -29,6 +29,15 @@ Plugin 'rust-lang/rust.vim'
 " Use ripgrep in vim
 Plugin 'jremmen/vim-ripgrep'
 
+" File sidebar
+Plugin 'preservim/nerdtree'
+
+" git integration
+Plugin 'tpope/vim-fugitive'
+
+" Add pretty nerdtree icons
+Plugin 'ryanoasis/vim-devicons'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -47,6 +56,8 @@ set background=dark
 set colorcolumn=100
 
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+
+let NERDTreeMinimalUI=1
 
 " The correct tab size
 set shiftwidth=4
