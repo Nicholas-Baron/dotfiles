@@ -25,6 +25,7 @@ hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
 SCROT_DIR='/home/nick/pics/scrot'
 hc keybind Print spawn fish -c "sleep 0.1 && scrot -e 'mkdir -p $SCROT_DIR && mv \$f $SCROT_DIR/'"
+hc keybind Shift-Print spawn fish -c "sleep 0.1 && scrot -s -e 'mkdir -p $SCROT_DIR && mv \$f $SCROT_DIR/'"
 hc keybind $Mod-d spawn "dmenu_run"
 
 # basic movement in tiling and floating mode
