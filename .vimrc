@@ -114,7 +114,7 @@ end
 
 " Formatting in Python
 " Use system-installed python black
-if executable('black')
+if !has('nvim') && executable('black')
     autocmd FileType python nnoremap <buffer><leader>f :<C-u>w<CR>:!black %<CR>:e<CR>
     autocmd FileType python vnoremap <buffer><leader>f :w<CR>:!black %<CR>:e<CR>
 end
