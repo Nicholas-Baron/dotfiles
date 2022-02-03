@@ -64,8 +64,9 @@ let g:netrw_liststyle = 3
 let NERDTreeMinimalUI=1
 let g:NERDTreeHighlightCursorline = 0
 " Start NERDTree when Vim is started without file arguments.
+" Allows leave the cursor in the other window
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTreeVCS | endif
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTreeVCS | wincmd p | endif
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
