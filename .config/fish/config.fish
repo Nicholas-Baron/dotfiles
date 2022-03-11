@@ -1,6 +1,9 @@
 
 fish_vi_key_bindings
 
+set -U EDITOR /usr/bin/nvim
+set -U VISUAL /usr/bin/nvim
+
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias ls='exa'
 alias mycal='cal -3mw'
