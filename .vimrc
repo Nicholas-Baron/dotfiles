@@ -54,6 +54,7 @@ syntax on
 set synmaxcol=500
 set background=dark
 set colorcolumn=100
+set nowrap
 
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
