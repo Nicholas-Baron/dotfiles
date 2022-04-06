@@ -246,14 +246,16 @@ type = internal/battery
 battery = BAT1
 adapter = ACAD
 full-at = 98
+poll-interval = 2
+time-format = %H:%M
 
 format-charging = <label-charging>
 format-charging-underline = #ffb52a
-label-charging = BAT charging %percentage%%
+label-charging = BAT charging %time% %percentage%%
 
 format-discharging = <label-discharging>
 format-discharging-underline = alert
-label-discharging = BAT discharging %percentage%%
+label-discharging = BAT discharging %time% %percentage%%
 
 format-full = <label-full>
 format-full-underline = ${self.format-charging-underline}
