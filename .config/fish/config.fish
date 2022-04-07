@@ -7,6 +7,8 @@ set -Ux LESSCHARSET 'utf-8'
 
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias ls='exa'
+alias la='exa -a'
+alias lla='exa -la --git'
 alias mycal='cal -3mw'
 alias mycalv='cal -3mwv'
 alias cls='clear ; exa'
