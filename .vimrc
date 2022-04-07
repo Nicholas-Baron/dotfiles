@@ -92,10 +92,10 @@ set ai si
 set showmatch incsearch hlsearch ignorecase smartcase
 
 " Spelling in LaTeX and markdown
-autocmd FileType tex setlocal spell spelllang=en_us
-autocmd FileType markdown setlocal spell spelllang=en_us
+set spelllang=en_us
+autocmd FileType tex,markdown,gitcommit setlocal spell
 " Toggle Spellcheck (F5 b/c rarely needed)
-noremap <F5> :setlocal spell! spelllang=en_us<CR>
+noremap <F5> :setlocal spell!<CR>
 
 " Leader is '\'
 
