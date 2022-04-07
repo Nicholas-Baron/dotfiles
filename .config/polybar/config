@@ -161,7 +161,7 @@ label = RAM: %gb_used% (%mb_used%) of %gb_total%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlp8s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
