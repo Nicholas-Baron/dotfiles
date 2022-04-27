@@ -251,15 +251,15 @@ time-format = %H:%M
 
 format-charging = <label-charging>
 format-charging-underline = #ffb52a
-label-charging = BAT charging %time% %percentage%%
+label-charging = charging %time% %percentage%%
 
 format-discharging = <label-discharging>
 format-discharging-underline = alert
-label-discharging = BAT discharging %time% %percentage%%
+label-discharging = discharging %time% %percentage%%
 
 format-full = <label-full>
 format-full-underline = ${self.format-charging-underline}
-label-full = BAT full %percentage%%
+label-full = full %percentage%%
 
 [module/temperature]
 type = internal/temperature
