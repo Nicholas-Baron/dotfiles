@@ -60,8 +60,7 @@ font-2 = fixed:pixelsize=10;0
 
 modules-left = ewmh
 modules-center = xwindow
-; modules-right = filesystem backlight-acpi pulseaudio memory cpu wlan battery temperature date
-modules-right = backlight-acpi pulseaudio cpu memory wlan battery temperature date
+modules-right = backlight-acpi pulseaudio cpu memory wlan tlp-battery temperature date
 
 tray-position = right
 tray-padding = 1
@@ -240,6 +239,11 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/tlp-battery]
+type = custom/script
+exec = ~/.config/polybar/battery-combined-tlp.sh
+interval = 5
 
 [module/battery]
 type = internal/battery
