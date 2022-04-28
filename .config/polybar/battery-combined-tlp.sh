@@ -1,14 +1,14 @@
 #!/bin/sh
 
-if [ $(hostname) = "archbox" ]; then
+if [ "$(hostname)" = "archbox" ]; then
     echo "On desktop"
     exit
 fi
 
 battery=$(sudo tlp-stat -b | tac | grep -m 1 "Charge" | tr -d -c "[:digit:],.")
-charging=$(sudo tlp-stat -b | tac | grep -m 1 "status" | grep -Eio "(discharging|charging)" | tr '[A-Z]' '[a-z]')
+charging=$(sudo tlp-stat -b | tac | grep -m 1 "status" | grep -Eio "(discharging|charging)" | tr '[:upper:]' '[:lower:]')
 
-if [ $battery = "" ] || [ $charging = "" ]; then
+if [ "$battery" = "" ] || [ "$charging" = "" ]; then
     echo "Is TLP installed?"
 else
     echo "$charging $battery %"
