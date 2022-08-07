@@ -1,6 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:/usr/bin/nvim
+SETUVAR --export LANG:en_US\x2eUTF\x2d8
+SETUVAR --export LANGUAGE:en\x3apl\x3aC
+SETUVAR --export LC_COLLATE:C\x2eUTF\x2d8
+SETUVAR --export LC_TIME:en_IE\x2eUTF\x2d8
 SETUVAR --export LESSCHARSET:utf\x2d8
 SETUVAR --export VISUAL:/usr/bin/nvim
 SETUVAR __fish_init_2_39_8:\x1d

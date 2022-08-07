@@ -5,6 +5,14 @@ set -Ux EDITOR /usr/bin/nvim
 set -Ux VISUAL /usr/bin/nvim
 set -Ux LESSCHARSET 'utf-8'
 
+if test -r ~/.config/locale.conf
+
+    grep 'export' ~/.config/locale.conf \
+    | sed -E 's:export ([^=]+)=(.*)$:set -Ux \1 \2:' \
+    | source
+
+end
+
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias ls='exa'
 alias la='exa -a'
