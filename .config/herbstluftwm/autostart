@@ -160,6 +160,7 @@ hc rule title='JetBrains Toolbox' floating=on
 # Gaming related
 hc rule title~'Steam - News.*' floating=on floatplacement=center
 hc rule title~'Install.*' floating=on
+hc rule title='Picture in picture' floating=on
 hc rule title='Stellaris' floating=on floatplacement=center
 hc rule title='Elite Dangerous Launcher' floating=on floatplacement=center
 hc rule title='Settings' floating=on floatplacement=center
