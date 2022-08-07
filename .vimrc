@@ -120,6 +120,11 @@ if !has('nvim') && executable('black')
     autocmd FileType python vnoremap <buffer><leader>f :w<CR>:!black %<CR>:e<CR>
 end
 
+" Buffers 1-9 can be accessed with \num
+for x in [ 1, 2, 3, 4, 5, 6, 7, 8, 9, ]
+    execute 'noremap <leader>'.x ':buf' x '<CR>'
+endfor
+
 " ; = : in normal mode
 nnoremap ; :
 " Quick-save
