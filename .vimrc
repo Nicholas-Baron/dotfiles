@@ -122,7 +122,9 @@ end
 
 " Buffers 1-9 can be accessed with \num
 for x in [ 1, 2, 3, 4, 5, 6, 7, 8, 9, ]
-    execute 'noremap <leader>'.x ':buf' x '<CR>'
+    execute 'nnoremap <leader>'.x ':buf' x '<CR>'
+    execute 'nnoremap <leader>s'.x ':sbuffer' x '<CR>'
+    execute 'nnoremap <leader>v'.x ':vnew<CR>:buffer' x '<CR>'
 endfor
 
 " ; = : in normal mode
@@ -135,19 +137,10 @@ nnoremap <leader>h :noh<CR>
 nnoremap <leader>; :buffers<CR>
 " File explorer
 nnoremap <leader>l :Explore<CR>
-" Vsplit to other file fast
-nnoremap <leader>v :Vex<CR>
-" Split to other file fast
-nnoremap <leader>s :Sex<CR>
 " Open a bottom terminal
 nnoremap <leader>t :terminal<CR>
 " Show or hide invisible characters
 nnoremap <leader>, :set invlist<CR>
-
-" Custom commands
-" Load buffer to side
-command -nargs=1 Vbuf vnew | buf <args>
-command -nargs=1 Nbuf new | buf <args>
 
 " Sane splits
 set splitright splitbelow
