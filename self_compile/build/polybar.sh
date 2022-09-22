@@ -8,4 +8,10 @@ else
     git pull
 fi
 
-./build.sh -j -n -p -A
+if [ ! -d build ]; then
+    mkdir build
+    cd build || exit
+    cmake -GNinja -DBUILD_DOC_HTML=FALSE -DBUILD_CONFIG=FALSE -DBUILD_SHELL=FALSE ..
+fi
+
+sudo ninja install
