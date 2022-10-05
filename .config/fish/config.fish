@@ -44,6 +44,7 @@ abbr update 'sudo aura -Syu ;and sudo aura -Au'
 abbr stop "sync ;and sync ;and sudo shutdown now"
 abbr restart "sync ;and sync ;and sudo shutdown -r now"
 abbr goto 'cd (dirname (fzf))'
+abbr custom_grub 'env LANG=C sudo grub-customizer'
 
 function mkcd --description 'make a directory and change into it'
     mkdir "$argv"
