@@ -1,5 +1,8 @@
-" Fish doesn't play all that well with others
-set runtimepath+=~/.vim runtimepath+=~/.vim/after shell=/bin/bash
+-- Fish doesn't play all that well with others
+
+vim.opt.shell='/bin/bash'
+vim.cmd([[
+set runtimepath+=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
@@ -11,8 +14,8 @@ let g:coq_settings = {
             \ 'auto_start': v:true,
             \ 'display.icons.mode' : 'none'
             \ }
+	    ]])
 
-lua << EOF
 local lsp = require('lspconfig')
 local coq = require('coq')
 local on_attach = function(client, bufnr)
@@ -64,6 +67,4 @@ lsp.rust_analyzer.setup(
     }
 )
 
-EOF
-
-set completeopt="menuone,noselect,noinsert"
+vim.opt.completeopt="menuone,noselect,noinsert"
