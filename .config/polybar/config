@@ -30,7 +30,7 @@ alert = #bd2c40
 blue = #0a81f5
 
 [bar/mybar]
-;monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 20
 ;offset-x = 1%
