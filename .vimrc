@@ -53,6 +53,7 @@ set t_Co=256
 syntax on
 set synmaxcol=500
 set background=dark
+highlight PMenu ctermbg=240
 set colorcolumn=100
 set nowrap
 
