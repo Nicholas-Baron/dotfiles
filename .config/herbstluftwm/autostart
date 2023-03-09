@@ -157,7 +157,9 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule title~'OpenGL.*' floating=on
 hc rule title='zoom' floating=on
 hc rule title='JetBrains Toolbox' floating=on
+hc rule title~'.*Mozilla Firefox' tag=2 focus=on switchtag=on
 # Gaming related
+hc rule title~'.*Discord.*' tag=1 focus=on switchtag=on
 hc rule title~'Steam - News.*' floating=on floatplacement=center
 hc rule title~'Install.*' floating=on
 hc rule title='Picture in picture' floating=on
