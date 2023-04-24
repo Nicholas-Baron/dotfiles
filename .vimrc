@@ -49,10 +49,10 @@ set timeoutlen=300
 set encoding=utf-8
 
 " Color stuff
-set t_Co=256
 syntax on
 set synmaxcol=500
 set background=dark
+highlight clear Identifier
 highlight PMenu ctermbg=240
 set colorcolumn=100
 set nowrap
