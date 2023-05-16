@@ -47,6 +47,10 @@ abbr restart "sync ;and sync ;and sudo shutdown -r now"
 abbr goto 'cd (dirname (fzf))'
 abbr custom_grub 'env LANG=C sudo grub-customizer'
 
+function terminal_size --description 'Set the alacritty terminal font size'
+    alacritty msg config -w -1 font.size=$argv
+end
+
 function mkcd --description 'make a directory and change into it'
     mkdir "$argv"
     cd "$argv"
