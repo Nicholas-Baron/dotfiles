@@ -47,6 +47,8 @@ abbr restart "sync ;and sync ;and sudo shutdown -r now"
 abbr goto 'cd (dirname (fzf))'
 abbr custom_grub 'env LANG=C sudo grub-customizer'
 
+abbr dup 'alacritty --working-directory $PWD &; disown'
+
 function terminal_size --description 'Set the alacritty terminal font size'
     alacritty msg config -w -1 font.size=$argv
 end
