@@ -161,6 +161,7 @@ hc rule title~'.*Mozilla Firefox' tag=2 focus=on switchtag=on
 # Gaming related
 hc rule title~'.*Discord.*' tag=1 focus=on switchtag=on
 hc rule title~'Steam - News.*' floating=on floatplacement=center
+hc rule title='Special Offers' floating=on floatplacement=center
 hc rule title~'Install.*' floating=on
 hc rule title='Picture in picture' floating=on
 hc rule title='Stellaris' floating=on floatplacement=center
