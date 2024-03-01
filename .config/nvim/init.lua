@@ -1,5 +1,7 @@
 -- Fish doesn't play all that well with others
 
+require('keybinds')
+
 vim.opt.shell='/bin/bash'
 vim.cmd([[
 set runtimepath+=~/.vim runtimepath+=~/.vim/after
