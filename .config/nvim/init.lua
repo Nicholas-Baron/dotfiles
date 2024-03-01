@@ -45,7 +45,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
 end
 
-local servers = {'clangd', 'cmake', 'texlab', 'pylsp', 'hls'}
+local servers = {'clangd', 'cmake', 'texlab', 'pylsp', 'hls', 'rust_analyzer'}
 for _, server in ipairs(servers) do
     lsp[server].setup(
         coq.lsp_ensure_capabilities{
@@ -56,15 +56,5 @@ for _, server in ipairs(servers) do
         }
     )
 end
-
-lsp.rust_analyzer.setup(
-    coq.lsp_ensure_capabilities{
-        on_attach=on_attach,
-        flags={
-            debounce_text_changes=100,
-        },
-        cmd = {"rustup", "run", "stable", "rust-analyzer"}
-    }
-)
 
 vim.opt.completeopt="menuone,noselect,noinsert"
