@@ -1,5 +1,6 @@
 local opt = vim.opt
 
+opt.showmatch = true
 opt.showmode = true
 
 opt.synmaxcol = 500

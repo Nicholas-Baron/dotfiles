@@ -42,8 +42,6 @@ call vundle#end()
 
 filetype plugin indent on
 
-set autowrite laststatus=1
-
 " Cool netrw setup
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -62,26 +60,3 @@ let g:NERDTreeHighlightCursorline = 0
 " autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
 "     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-" The correct tab size
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set expandtab
-
-" Indent 'helpers'
-set si
-
-" Searching details
-set showmatch ignorecase smartcase
-
-" Spelling in LaTeX and markdown
-set spelllang=en_us
-autocmd FileType tex,markdown,gitcommit setlocal spell
-
-" Sane splits
-set splitright splitbelow
-
-" Use ninja if a ninja.build file exists
-if !empty(globpath('.', 'build.ninja'))
-    set makeprg=ninja
-endif
