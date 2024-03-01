@@ -1,5 +1,6 @@
 -- Fish doesn't play all that well with others
 
+require('display')
 require('keybinds')
 
 vim.opt.shell='/bin/bash'

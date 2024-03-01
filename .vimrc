@@ -1,5 +1,5 @@
 
-set nocompatible showmode
+set nocompatible 
 
 filetype off
 
@@ -43,17 +43,6 @@ call vundle#end()
 filetype plugin indent on
 
 set autowrite laststatus=1
-set number relativenumber
-set timeoutlen=300
-
-" Color stuff
-set synmaxcol=500
-highlight clear Identifier
-highlight PMenu ctermbg=240
-set colorcolumn=100
-set nowrap
-
-set listchars=nbsp:¬,extends:»,precedes:«,trail:•,tab:> 
 
 " Cool netrw setup
 let g:netrw_banner = 0
@@ -91,10 +80,6 @@ autocmd FileType tex,markdown,gitcommit setlocal spell
 
 " Sane splits
 set splitright splitbelow
-
-" Decent Wildmenu
-set wildmode=list:longest
-set wildignore=.hg,.svm,*~,*.png,*.jpg,*.gif,*.swp,*.hi,*.o
 
 " Use ninja if a ninja.build file exists
 if !empty(globpath('.', 'build.ninja'))
