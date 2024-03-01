@@ -34,6 +34,10 @@ opt.wildignore = {
     '*.o'
 }
 
+-- Cool netrw setup
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+
 vim.cmd([[
 highlight clear Identifier
 highlight PMenu ctermbg=240
