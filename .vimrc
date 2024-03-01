@@ -1,5 +1,5 @@
 
-set nocompatible showcmd showmode
+set nocompatible showmode
 
 filetype off
 
@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Tells vim to respect .editorconfig files
-Plugin 'editorconfig/editorconfig-vim'
+" Plugin 'editorconfig/editorconfig-vim'
 
 " Vim understands fish script
 Plugin 'dag/vim-fish'
@@ -42,22 +42,18 @@ call vundle#end()
 
 filetype plugin indent on
 
-set autoread autowrite laststatus=1
-set nojoinspaces
-set ruler number relativenumber
+set autowrite laststatus=1
+set number relativenumber
 set timeoutlen=300
-set encoding=utf-8
 
 " Color stuff
-syntax on
 set synmaxcol=500
-set background=dark
 highlight clear Identifier
 highlight PMenu ctermbg=240
 set colorcolumn=100
 set nowrap
 
-set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+set listchars=nbsp:¬,extends:»,precedes:«,trail:•,tab:> 
 
 " Cool netrw setup
 let g:netrw_banner = 0
@@ -84,10 +80,10 @@ set softtabstop=4
 set expandtab
 
 " Indent 'helpers'
-set ai si
+set si
 
 " Searching details
-set showmatch incsearch hlsearch ignorecase smartcase
+set showmatch ignorecase smartcase
 
 " Spelling in LaTeX and markdown
 set spelllang=en_us
@@ -97,13 +93,10 @@ autocmd FileType tex,markdown,gitcommit setlocal spell
 set splitright splitbelow
 
 " Decent Wildmenu
-set wildmenu wildmode=list:longest
+set wildmode=list:longest
 set wildignore=.hg,.svm,*~,*.png,*.jpg,*.gif,*.swp,*.hi,*.o
 
 " Use ninja if a ninja.build file exists
 if !empty(globpath('.', 'build.ninja'))
     set makeprg=ninja
 endif
-
-" Manpages
-runtime ftplugin/man.vim
