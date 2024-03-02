@@ -60,6 +60,7 @@ function lsp_config()
     end
 end
 
+-- Look into folke/trouble.nvim 
 -- Look into ray-x/lsp_signature.nvim
 -- Look into hrsh7th/nvim-cmp 
 -- Look into junegunn/fzf.vim

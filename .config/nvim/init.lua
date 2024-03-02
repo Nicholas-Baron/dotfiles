@@ -32,6 +32,16 @@ vim.api.nvim_create_autocmd("FileType", {
     end
 })
 
+-- Do not write to orig or pacnew files
+vim.api.nvim_create_autocmd('BufRead', {
+    pattern = '*.pacnew',
+    command = 'set readonly'
+})
+vim.api.nvim_create_autocmd('BufRead', {
+    pattern = '*.orig',
+    command = 'set readonly'
+})
+
 if vim.fn.globpath('.', 'build.ninja') ~= '' then
     opt.makeprg = 'ninja'
 end
