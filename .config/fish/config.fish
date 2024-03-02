@@ -24,7 +24,6 @@ alias :q='exit'
 
 # vim shortcuts
 alias vim='nvim'
-alias vimconf='nvim ~/.vimrc'
 alias nvimconf='nvim ~/.config/nvim/init.lua'
 alias fishconf='nvim ~/.config/fish/config.fish'
 alias herbconf='nvim ~/.config/herbstluftwm/autostart'
