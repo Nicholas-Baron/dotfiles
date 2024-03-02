@@ -127,7 +127,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
 type = internal/backlight
-card = intel_backlight
+card = amdgpu_bl1
 
 format = <label>
 label = BL %percentage%%
@@ -240,7 +240,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/tlp-battery]
 type = custom/script
 exec = ~/.config/polybar/battery-combined-tlp.sh
-interval = 5
+interval = 10
 
 [module/battery]
 type = internal/battery
