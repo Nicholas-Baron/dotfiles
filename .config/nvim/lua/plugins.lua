@@ -87,6 +87,11 @@ local plugins = {
         config = lsp_config
     },
     {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
         'rust-lang/rust.vim',
         ft = { 'rust' },
         config = function()
