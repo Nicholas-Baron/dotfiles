@@ -25,7 +25,7 @@ function lsp_config()
       local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
       --Enable completion triggered by <c-x><c-o>
-      buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+      vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
       -- Mappings.
       local opts = { noremap=true, silent=true }
@@ -58,8 +58,14 @@ function lsp_config()
             }
         )
     end
+
+    vim.api.nvim_create_autocmd('LspAttach', {
+        command = ':COQnow'
+    })
 end
 
+-- Look into ggandor/leap.nvim
+-- Look into notjedi/nvim-rooter.lua
 -- Look into folke/trouble.nvim 
 -- Look into ray-x/lsp_signature.nvim
 -- Look into hrsh7th/nvim-cmp 
