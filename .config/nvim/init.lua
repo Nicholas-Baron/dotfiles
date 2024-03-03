@@ -27,7 +27,7 @@ opt.spelllang = { 'en_us', 'pl' }
 -- Spelling in LaTeX, markdown, and git commits
 vim.api.nvim_create_autocmd("FileType", {
     pattern = 'tex,markdown,gitcommit',
-    callback = function() 
+    callback = function()
         vim.opt_local.spell = true
     end
 })
