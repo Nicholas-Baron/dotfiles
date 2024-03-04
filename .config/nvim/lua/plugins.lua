@@ -108,6 +108,8 @@ local plugins = {
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-calc",
             "hrsh7th/cmp-buffer",
+            'hrsh7th/vim-vsnip',
+            "rafamadriz/friendly-snippets",
         },
         config = function()
             local cmp = require('cmp')

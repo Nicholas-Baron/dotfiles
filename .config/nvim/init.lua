@@ -21,7 +21,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Fish doesn't play all that well with others
-opt.shell='/bin/bash'
+opt.shell = '/bin/bash'
 opt.spelllang = { 'en_us', 'pl' }
 
 -- Spelling in LaTeX, markdown, and git commits
@@ -46,4 +46,4 @@ if vim.fn.globpath('.', 'build.ninja') ~= '' then
     opt.makeprg = 'ninja'
 end
 
-vim.opt.completeopt="menuone,noselect,noinsert"
+vim.opt.completeopt = "menuone,noselect,noinsert"
