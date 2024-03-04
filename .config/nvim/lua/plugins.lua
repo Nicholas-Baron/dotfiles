@@ -13,13 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local function lsp_config()
-    vim.g.coq_settings = {
-        ['display.pum.fast_close'] = false,
-        auto_start = true,
-    }
-
     local lsp = require('lspconfig')
-    local coq = require('coq')
     local on_attach = function(client, bufnr)
         local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
         local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -49,17 +43,13 @@ local function lsp_config()
 
     local servers = { 'clangd', 'cmake', 'texlab', 'pylsp', 'hls', 'rust_analyzer' }
     for _, server in ipairs(servers) do
-        lsp[server].setup(
-            coq.lsp_ensure_capabilities {
-                on_attach = on_attach,
-                flags = {
-                    debounce_text_changes = 100,
-                }
-            }
-        )
+        lsp[server].setup {
+            on_attach = on_attach
+        }
     end
 
     require('lspconfig').lua_ls.setup {
+        on_attach = on_attach,
         on_init = function(client)
             local path = client.workspace_folders[1].name
             if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
@@ -89,33 +79,57 @@ local function lsp_config()
             return true
         end
     }
-
-    vim.api.nvim_create_autocmd('LspAttach', {
-        command = ':COQnow'
-    })
 end
 
 -- Look into ggandor/leap.nvim
 -- Look into notjedi/nvim-rooter.lua
 -- Look into folke/trouble.nvim
 -- Look into ray-x/lsp_signature.nvim
--- Look into hrsh7th/nvim-cmp
 -- Look into junegunn/fzf.vim
 local plugins = {
     'khaveesh/vim-fish-syntax',
     'cespare/vim-toml',
     'leafgarland/typescript-vim',
     'harenome/vim-mipssyntax',
-    'neovim/nvim-lspconfig',
     'jremmen/vim-ripgrep',
     'rhysd/vim-clang-format',
     'tpope/vim-fugitive',
     'ryanoasis/vim-devicons',
     {
-        'ms-jpq/coq_nvim',
-        branch = 'coq',
-        dependencies = { 'neovim/nvim-lspconfig' },
+        'neovim/nvim-lspconfig',
         config = lsp_config
+    },
+    {
+        'hrsh7th/nvim-cmp',
+        event = 'InsertEnter',
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-calc",
+            "hrsh7th/cmp-buffer",
+        },
+        config = function()
+            local cmp = require('cmp')
+            cmp.setup {
+                snippet = {
+                    expand = function(args)
+                        vim.fn['vsnip#anonymous'](args.body)
+                    end
+                },
+                mapping = cmp.mapping.preset.insert {
+                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ['<CR>'] = cmp.mapping.confirm { select = true }
+                },
+                sources = cmp.config.sources({
+                    { name = 'nvim_lsp' }
+                })
+            }
+
+            cmp.setup.cmdline(':', {
+                sources = cmp.config.sources { { name = 'path' } }
+            })
+        end
     },
     {
         'nvim-telescope/telescope.nvim',
