@@ -142,7 +142,7 @@ local plugins = {
     },
     {
         'rust-lang/rust.vim',
-        ft = { 'rust' },
+        ft = 'rust',
         config = function()
             vim.g.rustfmt_autosave = 1
             vim.g.rustfmt_emit_files = 1
