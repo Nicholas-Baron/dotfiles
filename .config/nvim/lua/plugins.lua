@@ -81,6 +81,8 @@ local function lsp_config()
     }
 end
 
+local obsidian_path = vim.fn.expand('~') .. '/documents/notes'
+
 -- Look into ggandor/leap.nvim
 -- Look into notjedi/nvim-rooter.lua
 -- Look into folke/trouble.nvim
@@ -143,11 +145,16 @@ local plugins = {
     {
         'epwalsh/obsidian.nvim',
         version = '*',
-        ft = 'markdown',
+        event = {
+            'BufReadPre ' .. obsidian_path .. '/Personal Notes/**.md'
+        },
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
             workspaces = {
-                { name = 'personal', path = '~/documents/notes/Personal Notes' }
+                {
+                    name = 'personal',
+                    path = obsidian_path .. '/Personal Notes'
+                }
             }
         }
     },
