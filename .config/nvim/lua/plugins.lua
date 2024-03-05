@@ -141,6 +141,17 @@ local plugins = {
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
+        'epwalsh/obsidian.nvim',
+        version = '*',
+        ft = 'markdown',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = {
+            workspaces = {
+                { name = 'personal', path = '~/documents/notes/Personal Notes' }
+            }
+        }
+    },
+    {
         'rust-lang/rust.vim',
         ft = 'rust',
         config = function()
