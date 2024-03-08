@@ -19,18 +19,18 @@ local leader_map = {
 }
 
 for key, command in pairs(leader_map) do
-    kset('n', '<leader>'..key , command)
+    kset('n', '<leader>' .. key, command)
 end
 
 -- access buffers with leader and num
-for x=1,9 do
-    kset('n', '<leader>'..x, ':buffer '..x..'<CR>')
-    kset('n', '<leader>s'..x, ':sbuffer '..x..'<CR>')
-    kset('n', '<leader>v'..x, ':vnew<CR>:buffer '..x..'<CR>')
+for x = 1, 9 do
+    kset('n', '<leader>' .. x, ':buffer ' .. x .. '<CR>')
+    kset('n', '<leader>s' .. x, ':sbuffer ' .. x .. '<CR>')
+    kset('n', '<leader>v' .. x, ':vnew<CR>:buffer ' .. x .. '<CR>')
 end
 
 
 -- Center the search results after jumping
 for _, key in ipairs { 'n', 'N', '*', '#', 'g*' } do
-    kset('n', '<silent> '..key, key..'zz')
+    kset('n', '<silent>' .. key, key .. 'zz')
 end
