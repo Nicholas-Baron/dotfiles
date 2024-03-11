@@ -88,6 +88,7 @@ local obsidian_path = vim.fn.expand('~') .. '/documents/notes'
 -- Look into folke/trouble.nvim
 -- Look into ray-x/lsp_signature.nvim
 -- Look into junegunn/fzf.vim
+-- Look into ThePrimeagen/harpoon
 local plugins = {
     'khaveesh/vim-fish-syntax',
     'cespare/vim-toml',
@@ -126,7 +127,9 @@ local plugins = {
                     ['<CR>'] = cmp.mapping.confirm { select = true }
                 },
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' }
+                    { name = 'nvim_lsp' },
+                    { name = 'calc' },
+                    { name = 'buffer' }
                 }, {
                     { name = 'path' }
                 })
