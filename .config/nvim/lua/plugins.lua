@@ -41,14 +41,14 @@ local function lsp_config()
         buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
     end
 
-    local servers = { 'clangd', 'cmake', 'texlab', 'pylsp', 'hls', 'rust_analyzer' }
+    local servers = { 'clangd', 'cmake', 'texlab', 'pylsp', 'hls', 'rust_analyzer', 'ruff_lsp' }
     for _, server in ipairs(servers) do
         lsp[server].setup {
             on_attach = on_attach
         }
     end
 
-    require('lspconfig').lua_ls.setup {
+    lsp.lua_ls.setup {
         on_attach = on_attach,
         on_init = function(client)
             local path = client.workspace_folders[1].name
