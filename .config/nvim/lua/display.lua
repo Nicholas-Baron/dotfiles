@@ -12,11 +12,11 @@ opt.number = true
 opt.relativenumber = true
 
 opt.listchars = {
-	nbsp = '¬',
-	extends = '»',
-	precedes = '«',
-	trail = '•',
-	tab = '> ',
+    nbsp = '¬',
+    extends = '»',
+    precedes = '«',
+    trail = '•',
+    tab = '> ',
 }
 
 opt.timeoutlen = 300
