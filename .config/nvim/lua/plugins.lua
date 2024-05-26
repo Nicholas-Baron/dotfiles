@@ -103,6 +103,15 @@ local plugins = {
         config = lsp_config
     },
     {
+        "wincent/base16-nvim",
+        lazy = false,
+        priority = 1000,
+        config = function ()
+            vim.o.background = 'dark'
+            vim.cmd.colorscheme "base16-gruvbox-dark-hard"
+        end
+    },
+    {
         'hrsh7th/nvim-cmp',
         event = 'InsertEnter',
         dependencies = {
