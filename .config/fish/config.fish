@@ -93,8 +93,3 @@ if status --is-interactive
     echo
 end
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/nick/development/python/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
