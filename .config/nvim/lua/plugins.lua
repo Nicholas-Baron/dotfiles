@@ -106,14 +106,14 @@ local plugins = {
         "wincent/base16-nvim",
         lazy = false,
         priority = 1000,
-        config = function ()
+        config = function()
             vim.o.background = 'dark'
             vim.cmd.colorscheme "base16-gruvbox-dark-hard"
         end
     },
     {
         'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
+        event = { 'InsertEnter', 'CmdlineEnter' },
         dependencies = {
             'neovim/nvim-lspconfig',
             "hrsh7th/cmp-nvim-lsp",
