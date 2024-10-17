@@ -13,7 +13,6 @@ if test -r ~/.config/locale.conf
 
 end
 
-alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias ls='exa'
 alias la='exa -a'
 alias lla='exa -la --git'
@@ -35,7 +34,6 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
 
-abbr bash 'bash -i'
 abbr run 'bash -ci'
 abbr set_volume 'pactl set-sink-volume @DEFAULT_SINK@'
 abbr toggle_mute 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
