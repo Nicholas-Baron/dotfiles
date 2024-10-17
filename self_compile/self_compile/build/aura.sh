@@ -1,7 +1,6 @@
 #!/bin/sh
+git clone https://aur.archlinux.org/aura.git
 
-git clone https://aur.archlinux.org/aura-bin.git
+cd aura || exit
 
-cd aura-bin || exit
-
-makepkg -si
+makepkg -id
