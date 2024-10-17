@@ -28,3 +28,8 @@ fi
 
 export _JAVA_AWT_WM_NONREPARENTING=1 
 . "$HOME/.cargo/env"
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/nick/.local/share/JetBrains/Toolbox/scripts"
+

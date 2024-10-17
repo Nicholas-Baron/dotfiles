@@ -40,7 +40,7 @@ abbr run 'bash -ci'
 abbr set_volume 'pactl set-sink-volume @DEFAULT_SINK@'
 abbr toggle_mute 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 abbr cmake 'cmake -GNinja'
-abbr update 'sudo aura -Syu ;and sudo aura -Au'
+abbr update 'aura -Syu ;and aura -Au'
 abbr stop "sync ;and sync ;and sudo shutdown now"
 abbr restart "sync ;and sync ;and sudo shutdown -r now"
 abbr goto 'cd (dirname (fzf))'
@@ -98,3 +98,5 @@ end
 eval /home/nick/development/python/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/nick/.ghcup/bin # ghcup-env

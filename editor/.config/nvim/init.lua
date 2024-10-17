@@ -1,6 +1,9 @@
 require('display')
 require('keybinds')
-require('plugins')
+
+if not vim.g.vscode then
+    require('plugins')
+end
 
 local opt = vim.opt
 
