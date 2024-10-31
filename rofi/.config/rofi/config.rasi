@@ -1,12 +1,13 @@
 configuration {
 /*	modes: "window,drun,run,ssh";*/
-modes: "combi";
+modes: "combi,calc";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
+show-icons: true;
 /*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -35,7 +36,7 @@ sort: true;
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
 /*	combi-modes: "window,run";*/
-combi-modes: "window,run";
+combi-modes: "window,run,calc";
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/
@@ -48,6 +49,7 @@ combi-modes: "window,run";
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
 /*	combi-display-format: "{mode} {text}";*/
+combi-display-format: "{text}";
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
 /*	window-thumbnail: false;*/
@@ -152,3 +154,4 @@ combi-modes: "window,run";
       sorting-method:    "name";
   }
 }
+@theme "Monokai"

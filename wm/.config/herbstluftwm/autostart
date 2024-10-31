@@ -26,7 +26,7 @@ hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xter
 SCROT_DIR='/home/nick/pics/scrot'
 hc keybind Print spawn fish -c "sleep 0.1 && scrot -e 'mkdir -p $SCROT_DIR && mv \$f $SCROT_DIR/'"
 hc keybind Shift-Print spawn fish -c "sleep 0.1 && scrot -s -e 'mkdir -p $SCROT_DIR && mv \$f $SCROT_DIR/'"
-hc keybind $Mod-d spawn "dmenu_run"
+hc keybind $Mod-d spawn rofi -show combi
 
 # basic movement in tiling and floating mode
 # focusing clients
