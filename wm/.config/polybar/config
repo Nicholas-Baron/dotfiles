@@ -128,6 +128,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 [module/backlight-acpi]
 type = internal/backlight
 card = amdgpu_bl1
+use-actual-brightness = false
 
 format = <label>
 label = BL %percentage%%

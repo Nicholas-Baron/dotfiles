@@ -41,7 +41,7 @@ local function lsp_config()
         buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
     end
 
-    local servers = { 'clangd', 'cmake', 'texlab', 'pylsp', 'hls', 'rust_analyzer', 'ruff_lsp', 'zls' }
+    local servers = { 'clangd', 'cmake', 'texlab', 'pylsp', 'hls', 'rust_analyzer', 'ruff', 'zls' }
     for _, server in ipairs(servers) do
         lsp[server].setup {
             on_attach = on_attach
