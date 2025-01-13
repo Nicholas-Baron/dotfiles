@@ -39,6 +39,7 @@ abbr set_volume 'pactl set-sink-volume @DEFAULT_SINK@'
 abbr toggle_mute 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 abbr cmake 'cmake -GNinja'
 abbr update 'aura -Syu ;and aura -Au'
+abbr weather "curl 'wttr.in/?M'"
 abbr stop "sync ;and sync ;and sudo shutdown now"
 abbr restart "sync ;and sync ;and sudo shutdown -r now"
 abbr goto 'cd (dirname (fzf))'
