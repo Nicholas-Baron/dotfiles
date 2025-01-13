@@ -11,3 +11,5 @@
 	verbose = true
 [init]
 	defaultBranch = main
+[help]
+	autoCorrect = prompt
