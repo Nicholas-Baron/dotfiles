@@ -26,6 +26,8 @@ alias vim='nvim'
 alias nvimconf='nvim ~/.config/nvim/init.lua'
 alias fishconf='nvim ~/.config/fish/config.fish'
 alias herbconf='nvim ~/.config/herbstluftwm/autostart'
+alias swayconf='nvim ~/.config/sway/config'
+alias barconf='nvim ~/.config/waybar/config.jsonc ~/.config/waybar/style.css -O'
 
 # git shortcuts
 alias gs='git status'
