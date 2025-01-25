@@ -18,17 +18,17 @@
     "modules-right": [
         // "mpd",
         "idle_inhibitor",
-        // "pulseaudio",
-        "wireplumber",
+        "pulseaudio",
+        // "wireplumber",
         "bluetooth",
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
         "backlight",
         // "keyboard-state",
         // "sway/language",
+        "power-profiles-daemon",
         "battery",
         // "battery#bat2",
         "tray",
@@ -154,7 +154,7 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}%",
+        "format": "{percent}%BL",
         // "format-icons": ["", "", "", "", "", "", "", "", ""]
         "tooltip": false
     },
@@ -165,10 +165,12 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
+        // "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
+        "tooltip-format": "{capacity}%\n{timeTo}",
+        "format-time": "{H}h {m}m",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -204,7 +206,7 @@
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "Muted {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -216,7 +218,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "reverse-scroll": true
     },
     "custom/media": {
         "format": "{icon} {text}",
