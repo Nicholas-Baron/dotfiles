@@ -72,10 +72,17 @@ output "DVI-D-1" {
 
 input * {
     tap enabled
-    natural_scroll enabled
     dwt enabled
     accel_profile "flat"
     pointer_accel 0.5
+}
+
+input "type:touchpad" {
+    natural_scroll enabled
+}
+
+input "type:mouse" {
+    natural_scroll disabled
 }
 
 ### Key bindings
