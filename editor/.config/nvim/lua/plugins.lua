@@ -108,7 +108,7 @@ local plugins = {
         priority = 1000,
         config = function()
             vim.o.background = 'dark'
-            vim.cmd.colorscheme "base16-gruvbox-dark-hard"
+            vim.cmd.colorscheme "gruvbox-dark-hard"
         end
     },
     {
