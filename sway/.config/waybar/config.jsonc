@@ -137,7 +137,8 @@
         "format": "{usage}%CPU",
         "interval": 5,
         "tooltip": true,
-        "tooltip-format": "{avg_frequency}"
+        "tooltip-format": "{avg_frequency}",
+        "on-click": "alacritty -e htop"
     },
     "memory": {
         // "format": "{}% "
