@@ -117,7 +117,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%F %R}",
+        "format": "{:%F %T}",
          "calendar": {
                     "mode"          : "year",
                     "mode-mon-col"  : 3,
@@ -135,7 +135,9 @@
     "cpu": {
         // "format": "{usage}% ",
         "format": "{usage}%CPU",
-        "tooltip": false
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "{avg_frequency}"
     },
     "memory": {
         // "format": "{}% "
