@@ -220,16 +220,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width
-    bindsym $down resize grow height
-    bindsym $up resize shrink height
-    bindsym $right resize grow width
+    bindsym $left resize shrink width 5
+    bindsym $down resize grow height 5
+    bindsym $up resize shrink height 5
+    bindsym $right resize grow width 5
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width
-    bindsym Down resize grow height
-    bindsym Up resize shrink height
-    bindsym Right resize grow width
+    bindsym Left resize shrink width 5
+    bindsym Down resize grow height 5
+    bindsym Up resize shrink height 5
+    bindsym Right resize grow width 5
 
     # Return to default mode
     bindsym Return mode "default"
