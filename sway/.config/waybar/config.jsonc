@@ -122,6 +122,7 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%F %T}",
+        "interval": 15,
          "calendar": {
                     "mode"          : "year",
                     "mode-mon-col"  : 3,
