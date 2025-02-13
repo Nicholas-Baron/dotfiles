@@ -87,6 +87,12 @@ input "type:mouse" {
     natural_scroll disabled
 }
 
+input "type:keyboard" {
+    xkb_layout us,pl,dk
+}
+
+    bindsym $mod+Shift+i input type:keyboard xkb_switch_layout next
+
 ### Key bindings
 #
 # Basics:
