@@ -20,6 +20,7 @@ alias mycal='cal -3mw'
 alias mycalv='cal -3mwv'
 alias cls='clear ; exa'
 alias :q='exit'
+alias calc='qalc'
 
 # vim shortcuts
 alias vim='nvim'
