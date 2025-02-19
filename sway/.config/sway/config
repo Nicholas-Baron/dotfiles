@@ -89,6 +89,7 @@ input "type:mouse" {
 
 input "type:keyboard" {
     xkb_layout us,pl,dk
+    xkb_options caps:escape_shifted_capslock
 }
 
     bindsym $mod+Shift+i input type:keyboard xkb_switch_layout next
