@@ -21,6 +21,7 @@ alias mycalv='cal -3mwv'
 alias cls='clear ; exa'
 alias :q='exit'
 alias calc='qalc'
+alias bindump='objdump -M intel --visualize-jumps -C'
 
 # vim shortcuts
 alias vim='nvim'
