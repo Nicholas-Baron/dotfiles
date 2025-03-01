@@ -22,11 +22,11 @@ set $term alacritty
 # on the original workspace that the command was run on.
 set $menu rofi -show combi | xargs swaymsg exec --
 
-default_border pixel 1
+default_border pixel 2
 smart_borders on
 smart_gaps on
 show_marks off
-gaps inner 4
+gaps inner 3
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 for_window [title="Extension.*"] floating enable
 
