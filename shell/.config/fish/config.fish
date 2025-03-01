@@ -13,6 +13,7 @@ if test -r ~/.config/locale.conf
 
 end
 
+alias cat='bat'
 alias ls='exa'
 alias la='exa -a'
 alias lla='exa -la --git'
