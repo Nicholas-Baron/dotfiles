@@ -4,6 +4,7 @@ fish_vi_key_bindings
 set -Ux EDITOR /usr/bin/nvim
 set -Ux VISUAL /usr/bin/nvim
 set -Ux LESSCHARSET 'utf-8'
+set -Ux PATH /home/nick/.cargo/bin $PATH
 
 if test -r ~/.config/locale.conf
 
