@@ -44,6 +44,14 @@ output "DVI-D-1" {
     position -1920,0
 }
 
+output "eDP-1" {
+    position 0,0
+}
+
+output "HDMI-A-1" {
+    position 1920,0
+}
+
 ### Idle configuration
 #
 # Example configuration:
