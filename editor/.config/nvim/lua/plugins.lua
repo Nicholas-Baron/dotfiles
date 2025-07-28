@@ -102,13 +102,10 @@ local plugins = {
         'neovim/nvim-lspconfig',
         config = lsp_config
     },
-    {
-        "wincent/base16-nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.o.background = 'dark'
-            vim.cmd.colorscheme "gruvbox-dark-hard"
+    { "ellisonleao/gruvbox.nvim", priority = 1000 ,
+        config = function() 
+            vim.o.background = "dark"
+            vim.cmd([[colorscheme gruvbox]])
         end
     },
     {
