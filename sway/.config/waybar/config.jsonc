@@ -68,7 +68,9 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": { 
-        "tooltip": false
+        "tooltip": false,
+        "expand": true,
+        "justify": "center"
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
