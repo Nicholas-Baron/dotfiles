@@ -218,6 +218,15 @@ local plugins = {
         end
     },
     {
+        'folke/lazydev.nvim',
+        ft = 'lua',
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } }
+            }
+        }
+    },
+    {
         'preservim/nerdtree',
         config = function()
             vim.g.NERDTreeMinimalUI = 1
