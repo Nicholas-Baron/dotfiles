@@ -11,6 +11,8 @@ opt.linebreak = true
 opt.number = true
 opt.relativenumber = true
 
+opt.winborder = 'rounded'
+
 opt.listchars = {
     nbsp = '¬',
     extends = '»',
