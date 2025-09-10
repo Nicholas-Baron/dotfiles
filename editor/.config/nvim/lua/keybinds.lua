@@ -7,6 +7,10 @@ kset('n', ';', ':')
 kset('n', '<F5>', ':setlocal spell!<CR>')
 
 -- Leader is '\'
+vim.g.mapleader = '\\'
+-- TODO: test out different local leader
+vim.g.maplocalleader = '\\'
+
 local leader_map = {
     r = ':registers<CR>',
     m = ':marks<CR>',
