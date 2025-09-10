@@ -19,7 +19,8 @@ local leader_map = {
     [';'] = ':buffers<CR>',
     l = ':Explore<CR>',
     t = ':terminal<CR>',
-    [','] = ':set invlist<CR>'
+    [','] = ':set invlist<CR>',
+    f = ':lua vim.lsp.buf.format{ timeout_ms = 5000 }<CR>'
 }
 
 for key, command in pairs(leader_map) do
