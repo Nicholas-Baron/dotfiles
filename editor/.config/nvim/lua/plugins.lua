@@ -57,69 +57,23 @@ local function lsp_config()
         buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
     end
 
-    local servers = { 'clangd', 'cmake', 'texlab', 'pylsp', 'hls', 'rust_analyzer', 'ruff', 'zls' }
+    local servers = {
+        'clangd',
+        'cmake',
+        'hls',
+        'lua_ls',
+        'pylsp',
+        'ruff',
+        'rust_analyzer',
+        'texlab',
+        'zls',
+    }
+
     for _, server in ipairs(servers) do
         lsp[server].setup {
             on_attach = on_attach
         }
     end
-
-    lsp.lua_ls.setup {
-        on_attach = on_attach,
-        settings = {
-            Lua = {
-                runtime = {
-                    -- Tell the language server which version of Lua you're using
-                    -- (most likely LuaJIT in the case of Neovim)
-                    version = 'LuaJIT'
-                },
-                -- diagnostics = { globals = { "vim" } },
-                -- Make the server aware of Neovim runtime files
-                workspace = {
-                    checkThirdParty = false,
-                    library = {
-                        vim.env.VIMRUNTIME
-                        -- Depending on the usage, you might want to add additional paths here.
-                        -- E.g.: For using `vim.*` functions, add vim.env.VIMRUNTIME/lua.
-                        -- "${3rd}/luv/library"
-                        -- "${3rd}/busted/library",
-                    }
-                    -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-                    -- library = vim.api.nvim_get_runtime_file("", true)
-                }
-            }
-        },
-        on_init = function(client)
-            local path = client.workspace_folders[1].name
-            if fs_stat(path .. '/.luarc.json') or fs_stat(path .. '/.luarc.jsonc') then
-                return
-            end
-
-            client.config.settings = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-                Lua = {
-                    runtime = {
-                        -- Tell the language server which version of Lua you're using
-                        -- (most likely LuaJIT in the case of Neovim)
-                        version = 'LuaJIT'
-                    },
-                    -- diagnostics = { globals = { "vim" } },
-                    -- Make the server aware of Neovim runtime files
-                    workspace = {
-                        checkThirdParty = false,
-                        library = {
-                            vim.env.VIMRUNTIME
-                            -- Depending on the usage, you might want to add additional paths here.
-                            -- E.g.: For using `vim.*` functions, add vim.env.VIMRUNTIME/lua.
-                            -- "${3rd}/luv/library"
-                            -- "${3rd}/busted/library",
-                        }
-                        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-                        -- library = vim.api.nvim_get_runtime_file("", true)
-                    }
-                }
-            })
-        end,
-    }
 end
 
 local obsidian_path = vim.fn.expand('~') .. '/documents/notes'
