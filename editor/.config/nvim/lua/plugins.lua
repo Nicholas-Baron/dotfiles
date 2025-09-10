@@ -1,14 +1,31 @@
+local function fs_stat(path)
+    if vim.uv then
+        return vim.uv.fs_stat(path)
+    else
+        return vim.loop.fs_stat(path)
+    end
+end
+
 -- Load lazy in
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
+if not fs_stat(lazypath) then
+    local out = vim.fn.system {
         "git",
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
         "--branch=stable", -- latest stable release
         lazypath,
-    })
+    }
+    if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out,                            "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
+    end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -16,7 +33,6 @@ local function lsp_config()
     local lsp = require('lspconfig')
     local on_attach = function(client, bufnr)
         local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
         --Enable completion triggered by <c-x><c-o>
         vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
@@ -75,7 +91,7 @@ local function lsp_config()
         },
         on_init = function(client)
             local path = client.workspace_folders[1].name
-            if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+            if fs_stat(path .. '/.luarc.json') or fs_stat(path .. '/.luarc.jsonc') then
                 return
             end
 
