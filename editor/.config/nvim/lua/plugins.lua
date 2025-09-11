@@ -77,6 +77,15 @@ local plugins = {
         end
     },
     {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("nvim-tree").setup {}
+        end
+    },
+    {
         'hrsh7th/nvim-cmp',
         event = { 'InsertEnter', 'CmdlineEnter' },
         dependencies = {
@@ -152,24 +161,6 @@ local plugins = {
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } }
             }
         }
-    },
-    {
-        'preservim/nerdtree',
-        config = function()
-            vim.g.NERDTreeMinimalUI = 1
-            vim.g.NERDTreeHighlightCursorline = 0
-            -- Start NERDTree when Vim is started without file arguments.
-            -- Allows leave the cursor in the other window
-            -- autocmd StdinReadPre * let s:std_in=1
-            -- autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTreeVCS | wincmd p | endif
-            --
-            -- " Close the tab if NERDTree is the only window remaining in it.
-            -- autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-            --
-            -- " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-            -- autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-            --     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-        end
     },
     {
         'preservim/vim-markdown',
