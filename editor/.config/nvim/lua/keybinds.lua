@@ -20,12 +20,14 @@ local leader_map = {
     l = ':Explore<CR>',
     t = ':terminal<CR>',
     [','] = ':set invlist<CR>',
-    f = ':lua vim.lsp.buf.format{ timeout_ms = 5000 }<CR>'
+    f = ':lua vim.lsp.buf.format{ timeout_ms = 5000 }<CR>',
 }
 
 for key, command in pairs(leader_map) do
-    kset('n', '<leader>' .. key, command)
+    kset('n', '<leader>' .. key, command, { noremap = true })
 end
+
+kset('n', 'gre', "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true })
 
 -- access buffers with leader and num
 for x = 1, 9 do
