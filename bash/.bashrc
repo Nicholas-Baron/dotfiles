@@ -24,10 +24,13 @@ if [[ "$(uname -a)" =~ Ubuntu|Debian ]]; then
 	alias update_check="sudo aptitude update && sudo aptitude --simulate upgrade -y"
 	alias update_exec="sudo apt-fast upgrade -y"
 fi
-alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
+
+alias gs='git status'
+alias gap='git add -p'
+alias gd='git diff'
 
 # append to history
 shopt -s histappend
