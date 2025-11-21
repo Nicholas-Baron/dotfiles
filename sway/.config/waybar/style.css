@@ -11,7 +11,7 @@ window#waybar {
 }
 
 tooltip {
-  background: rgba(43, 48, 59, 0.5);
+  background: rgba(43, 48, 59, 0.8);
   border: 1px solid rgba(100, 114, 125, 0.5);
 }
 
@@ -28,6 +28,10 @@ tooltip label {
     background: transparent;
     color: white;
     border-bottom: 3px solid transparent;
+}
+
+#workspaces button.visible {
+    background: #32393E;
 }
 
 #workspaces button.focused {
