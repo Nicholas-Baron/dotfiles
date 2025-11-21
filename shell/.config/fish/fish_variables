@@ -6,12 +6,12 @@ SETUVAR --export LANGUAGE:en\x3apl\x3aC
 SETUVAR --export LC_COLLATE:C\x2eUTF\x2d8
 SETUVAR --export LC_TIME:en_IE\x2eUTF\x2d8
 SETUVAR --export LESSCHARSET:utf\x2d8
-SETUVAR --export --path PATH:/home/nick/\x2ecargo/bin\x1e/home/nick/\x2eelan/bin\x1e/home/nick/\x2ecargo/bin\x1e/home/nick/\x2enix\x2dprofile/bin\x1e/nix/var/nix/profiles/default/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/nick/\x2elocal/share/JetBrains/Toolbox/scripts
+SETUVAR --export --path PATH:/home/nick/\x2ecargo/bin\x1e/home/nick/\x2elocal/bin\x1e/home/nick/\x2ecargo/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/sbin\x1e/usr/bin\x1e/sbin\x1e/bin\x1e/usr/games\x1e/usr/local/games\x1e/snap/bin
 SETUVAR --export VISUAL:/usr/bin/nvim
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
-SETUVAR __fish_initialized:3800
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_bash:bash\x20\x2di
 SETUVAR _fish_abbr_cmake:cmake\x20\x2dGNinja
 SETUVAR _fish_abbr_custom__grub:env\x20LANG\x3dC\x20sudo\x20grub\x2dcustomizer

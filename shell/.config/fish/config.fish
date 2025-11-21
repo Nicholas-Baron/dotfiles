@@ -18,12 +18,12 @@ alias cat='bat'
 alias ls='exa'
 alias la='exa -a'
 alias lla='exa -la --git'
-alias mycal='cal -3mw'
-alias mycalv='cal -3mwv'
+alias mycal='cal -3'
+alias mycalv='ncal -3w'
 alias cls='clear ; exa'
 alias :q='exit'
 alias calc='qalc'
-alias bindump='objdump -M intel --visualize-jumps -C'
+alias bindump='objdump -M intel --visualize-jumps'
 
 # vim shortcuts
 alias vim='nvim'
@@ -98,10 +98,5 @@ if status --is-interactive
     echo
 end
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/nick/development/python/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
+set -gx PATH "$HOME/.local/bin:$PATH"
 
-
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/nick/.ghcup/bin # ghcup-env
