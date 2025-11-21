@@ -18,8 +18,15 @@ alias cat='bat'
 alias ls='exa'
 alias la='exa -a'
 alias lla='exa -la --git'
-alias mycal='cal -3'
-alias mycalv='ncal -3w'
+
+if test ! -x ncal 
+    alias mycal='cal -3mw'
+    alias mycalv='cal -3mwv'
+else
+    alias mycal='cal -3'
+    alias mycalv='ncal -3w'
+end
+
 alias cls='clear ; exa'
 alias :q='exit'
 alias calc='qalc'
@@ -99,3 +106,11 @@ end
 
 set -gx PATH "$HOME/.local/bin:$PATH"
 
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/nick/.ghcup/bin # ghcup-env
+
+# pnpm
+set -gx PNPM_HOME "/home/nick/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
