@@ -7,6 +7,7 @@ opt.synmaxcol = 500
 opt.colorcolumn = '100'
 
 opt.wrap = false
+opt.wrapmargin = 1
 opt.linebreak = true
 opt.number = true
 opt.relativenumber = true
