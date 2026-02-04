@@ -65,6 +65,11 @@ local plugins = {
     'tpope/vim-fugitive',
     'ryanoasis/vim-devicons',
     {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = ':TSUpdate'
+    },
+    {
         'neovim/nvim-lspconfig',
         config = lsp_config
     },
