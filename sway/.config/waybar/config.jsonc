@@ -18,8 +18,8 @@
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
-        "pulseaudio",
-        // "wireplumber",
+        // "pulseaudio",
+        "wireplumber",
         "bluetooth",
         "network",
         "cpu",
@@ -210,7 +210,23 @@
         "on-click": "alacritty -e nmtui-connect"
     },
     "wireplumber": {
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "Muted {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "reverse-scroll": true
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
