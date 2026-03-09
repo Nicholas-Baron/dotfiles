@@ -29,6 +29,8 @@ show_marks off
 gaps inner 3
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 for_window [title="Extension.*"] floating enable
+for_window [title="zoom"] floating enable
+for_window [title="Meeting"] floating enable
 
 ### Output configuration
 #
