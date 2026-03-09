@@ -28,6 +28,7 @@ for key, command in pairs(leader_map) do
 end
 
 kset('n', 'gre', "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true })
+kset('n', 'gD', "<cmd>lua vim.lsp.buf.definition{ reuse_win = true }<CR>", { noremap = true })
 
 -- access buffers with leader and num
 for x = 1, 9 do
