@@ -3,10 +3,10 @@
     font-family: FontAwesome, Roboto Mono, Helvetica, Arial, sans-serif;
     font-size: 13px;
     min-height: 0;
-    background: transparent;
 }
 
 window#waybar {
+    background: transparent;
     color: white;
 }
 
@@ -22,6 +22,10 @@ tooltip label {
 #workspaces {
     padding: 0;
     margin-left: 0.5em;
+}
+
+#tray {
+    background: transparent;
 }
 
 #workspaces button {
