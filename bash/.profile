@@ -34,3 +34,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Added by Toolbox App
 export PATH="$PATH:/home/nick/.local/share/JetBrains/Toolbox/scripts"
 
+
+export GRIM_DEFAULT_DIR="$XDG_PICTURES_DIR/scrot"
