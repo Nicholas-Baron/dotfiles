@@ -14,13 +14,13 @@ if not fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     }
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out,                            "WarningMsg" },
+            { out, "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -29,50 +29,10 @@ if not fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local function lsp_config()
-    local servers = {
-        'clangd',
-        'cmake',
-        'hls',
-        'lua_ls',
-        'pylsp',
-        'ruff',
-        'rust_analyzer',
-        'texlab',
-        'zls',
-    }
-
-    for _, server in ipairs(servers) do
-        vim.lsp.enable(server)
-    end
-end
-
 local obsidian_path = vim.fn.expand('~') .. '/documents/notes'
 
--- Look into ggandor/leap.nvim
--- Look into notjedi/nvim-rooter.lua
--- Look into folke/trouble.nvim
--- Look into ray-x/lsp_signature.nvim
--- Look into junegunn/fzf.vim
--- Look into ThePrimeagen/harpoon
 local plugins = {
-    'khaveesh/vim-fish-syntax',
-    'cespare/vim-toml',
-    'leafgarland/typescript-vim',
-    'harenome/vim-mipssyntax',
-    'jremmen/vim-ripgrep',
-    'rhysd/vim-clang-format',
-    'tpope/vim-fugitive',
-    'ryanoasis/vim-devicons',
-    {
-        'nvim-treesitter/nvim-treesitter',
-        lazy = false,
-        build = ':TSUpdate'
-    },
-    {
-        'neovim/nvim-lspconfig',
-        config = lsp_config
-    },
+    -- Colorscheme
     {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
@@ -81,6 +41,8 @@ local plugins = {
             vim.cmd([[colorscheme gruvbox]])
         end
     },
+
+    -- File tree
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
@@ -90,6 +52,16 @@ local plugins = {
             require("nvim-tree").setup {}
         end
     },
+
+    -- Syntax highlighting
+    {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = ':TSUpdate'
+    },
+
+    -- LSP & Completion
+    { 'neovim/nvim-lspconfig', config = false },
     {
         'hrsh7th/nvim-cmp',
         event = { 'InsertEnter', 'CmdlineEnter' },
@@ -128,6 +100,8 @@ local plugins = {
             })
         end
     },
+
+    -- Fuzzy finder
     {
         'nvim-telescope/telescope.nvim',
         tag = 'v0.2.1',
@@ -136,6 +110,8 @@ local plugins = {
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         }
     },
+
+    -- Notes
     {
         'epwalsh/obsidian.nvim',
         version = '*',
@@ -152,6 +128,8 @@ local plugins = {
             }
         }
     },
+
+    -- Language support
     {
         'rust-lang/rust.vim',
         ft = 'rust',
@@ -175,17 +153,21 @@ local plugins = {
         ft = { 'markdown' },
         dependencies = { 'godlygeek/tabular' },
         config = function()
-            -- never ever fold!
             vim.g.vim_markdown_folding_disabled = 1
-            -- support front-matter in .md files
             vim.g.vim_markdown_frontmatter = 1
-            -- 'o' on a list item should insert at same level
             vim.g.vim_markdown_new_list_item_indent = 0
-            -- don't add bullets when wrapping:
-            -- https://github.com/preservim/vim-markdown/issues/232
             vim.g.vim_markdown_auto_insert_bullets = 0
         end
-    }
+    },
+
+    -- Syntax & formatting
+    'khaveesh/vim-fish-syntax',
+    'cespare/vim-toml',
+    'leafgarland/typescript-vim',
+    'harenome/vim-mipssyntax',
+    'jremmen/vim-ripgrep',
+    'rhysd/vim-clang-format',
+    'tpope/vim-fugitive',
 }
 
 require("lazy").setup(plugins)

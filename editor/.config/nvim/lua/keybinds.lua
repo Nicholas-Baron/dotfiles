@@ -24,7 +24,7 @@ local leader_map = {
 }
 
 for key, command in pairs(leader_map) do
-    kset('n', '<leader>' .. key, command, { noremap = true })
+    kset('n', '<leader>' .. key, command)
 end
 
 kset('n', 'gre', "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true })

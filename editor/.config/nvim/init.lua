@@ -16,11 +16,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Do not write to orig or pacnew files
 vim.api.nvim_create_autocmd('BufRead', {
-    pattern = '*.pacnew',
-    command = 'set readonly'
-})
-vim.api.nvim_create_autocmd('BufRead', {
-    pattern = '*.orig',
+    pattern = { '*.pacnew', '*.orig' },
     command = 'set readonly'
 })
 
