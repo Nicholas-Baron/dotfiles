@@ -1,6 +1,5 @@
-require('display')
+require('settings')
 require('keybinds')
-require('configs')
 
 if not vim.g.vscode then
     require('plugins')

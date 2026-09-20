@@ -1,5 +1,30 @@
 local opt = vim.opt
 
+-- Editor behavior
+opt.autowrite = true
+opt.smartindent = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.splitright = true
+opt.splitbelow = true
+opt.completeopt = "menuone,noselect,noinsert"
+opt.sidescroll = 10
+
+-- The correct tab size
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.expandtab = true
+
+-- Fish doesn't play all that well with others
+opt.shell = '/bin/bash'
+opt.spelllang = { 'en_us', 'pl' }
+
+if vim.fn.globpath('.', 'build.ninja') ~= '' then
+    opt.makeprg = 'ninja'
+end
+
+-- Display settings
 opt.showmatch = true
 opt.showmode = true
 
@@ -7,7 +32,6 @@ opt.synmaxcol = 500
 opt.colorcolumn = '100'
 
 opt.wrap = false
-opt.wrapmargin = 1
 opt.linebreak = true
 opt.number = true
 opt.relativenumber = true
@@ -15,10 +39,10 @@ opt.relativenumber = true
 opt.winborder = 'rounded'
 
 opt.listchars = {
-    nbsp = '¬',
+    nbsp = '⍽',
     extends = '»',
     precedes = '«',
-    trail = '•',
+    trail = '·',
     tab = '> ',
 }
 
