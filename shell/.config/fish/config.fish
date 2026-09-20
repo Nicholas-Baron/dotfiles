@@ -5,6 +5,7 @@ set -Ux EDITOR /usr/bin/nvim
 set -Ux VISUAL /usr/bin/nvim
 set -Ux LESSCHARSET 'utf-8'
 set -Ux PATH /home/nick/.cargo/bin $PATH
+set -Ux LIBVA_DRIVER_NAME 'radeonsi'
 
 if test -r ~/.config/locale.conf
 
