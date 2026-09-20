@@ -610,3 +610,8 @@ y = 0
 [general]
 live_config_reload = true
 working_directory = "None"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
